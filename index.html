@@ -11,6 +11,13 @@
 </head>
 <body>
     <!-- Loading screen -->
+    <div class="shapes float">
+        <div class="square spin"></div>
+        <div class="square1 spin"></div>
+        <div class="circle"></div>
+        <div class="circle2"></div>
+    </div>
+    </div>
     <div class="global">
         <header></header>
         <!-- Bouton burger pour mobile -->
@@ -40,7 +47,8 @@
         <!-- Section de la page d'accueil -->
         <section id="sectionAccueil">
             <div>
-                <h1>St&eacute;phanie Dang</h1>
+                <h1>HELLO, <br>
+                     I AM St&eacute;phanie Dang</h1>
                 <p>&nbsp;&nbsp;&Eacute;tudiante en int&eacute;gration&nbsp;&nbsp;multim&eacute;dia &nbsp;</p>
                 <div class="textChanger">
                     <div class="right">
@@ -48,10 +56,11 @@
                     </div>
                 </div>
             </div>
+            <!-- Bouton scroll down -->
             <span id="sectionBtnDown">
-                <!-- SVG pour le btn scroll -->
-            <?xml version="1.0" encoding="UTF-8"?>
-            <svg enable-background="new 0 0 23.5 32.3" version="1.1" viewBox="0 0 23.5 32.3" xml:space="preserve"
+                <div class="verticalLine"></div>
+                <p>scroll down</p>
+            <!-- <svg enable-background="new 0 0 23.5 32.3" version="1.1" viewBox="0 0 23.5 32.3" xml:space="preserve"
                 xmlns="http://www.w3.org/2000/svg">
                 <style type="text/css">
                     .st0 {
@@ -83,20 +92,55 @@
                     d="m12.3 13.1c0 0.4-0.1 0.9-0.6 0.8-0.4 0-0.5-0.5-0.5-0.8 0-0.4 0.1-0.9 0.6-0.8 0.4-0.1 0.5 0.4 0.5 0.8z" />
                 <path class="st2"
                     d="m11.2 9.6c0-0.4 0.2-0.7 0.6-0.6 0.3 0 0.4 0.3 0.5 0.6 0 0.4-0.2 0.7-0.5 0.7-0.4 0.1-0.6-0.3-0.6-0.7z" />
-            </svg>
-
+            </svg> -->
             </span>
+            <!-- Image bg -->
+            <div id="imageBackground"> </div>
         </section>
         <!-- Section ABOUT -->
         <section id="sectionAbout">
-            <div>
+            <div class="container">
                 <div class="aboutMe">
                     <h2>about me</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim tenetur, officia quam inventore quisquam incidunt maxime qui ipsam quasi dolorum in, odio fugiat accusantium a? Dicta atque similique veniam aliquam?</p>
                 </div>
                 <div class="skills">
                     <h2>my skills</h2>
-
+                    <div class="demo">
+                        <!-- Pourcentage Skills -->
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <!-- Ai -->
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12" />
+                             <text x="50%" y="50%" text-anchor="middle" stroke="#51c5cf" stroke-width="2px"
+                                 dy=".3em">Ai</text>
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#f77a52" stroke-width="12" stroke-dasharray="339.292"
+                                stroke-dashoffset="135.717" style="stroke-linecap: round;"/>
+                        </svg>
+                        <!-- Ps -->
+                         <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12" />
+                            <text x="50%" y="50%" text-anchor="middle" stroke="#51c5cf" stroke-width="2px"
+                                dy=".3em">Ps</text>
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#f77a52" stroke-width="12" stroke-dasharray="339.292"
+                                stroke-dashoffset="135.717" style="stroke-linecap: round;"/>
+                        </svg>
+                        <!--Ae-->
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12" />
+                            <text x="50%" y="50%" text-anchor="middle" stroke="#51c5cf" stroke-width="2px"
+                                dy=".3em">Ps</text>
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#f77a52" stroke-width="12" stroke-dasharray="339.292"
+                                stroke-dashoffset="135.717" style="stroke-linecap: round;"/>
+                        </svg>
+                        <!--Unity-->
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="12" />
+                            <text x="50%" y="50%" text-anchor="middle" stroke="#51c5cf" stroke-width="2px"
+                                dy=".3em">Unity</text>
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#f77a52" stroke-width="12" stroke-dasharray="339.292"
+                                stroke-dashoffset="135.717" style="stroke-linecap: round;"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>

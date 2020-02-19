@@ -57,13 +57,17 @@ section {
             animation: LeftSlideIn 1s forwards;
             // text-shadow: -3px 0 0 rgba(255, 0, 0, .7),
             // 3px 0 0 rgba(0, 255, 255, .7);
-              text-shadow:
-              -0.25rem -0.15rem rgba(cyan, 0.5),
-              0 0.25rem rgba(yellow, 0.5);
-              &:hover{
-                    text-shadow: -0.5rem -0.05rem rgba(cyan, 0.5),
-                    0 0.5rem rgba(yellow, 0.5);
-              }
+            //   text-shadow:
+            //   -0.25rem -0.15rem rgba(cyan, 0.5),
+            //   0 0.25rem rgba(yellow, 0.5);
+            //   &:hover{
+            //         text-shadow: -0.5rem -0.05rem rgba(cyan, 0.5),
+            //         0 0.5rem rgba(yellow, 0.5);
+            //   }
+            @include desktop {
+                    font-size: 2.5rem;
+            }
+
         }
         p {
             font-size: 0.75rem;
@@ -85,9 +89,17 @@ section {
                 color: $color_cyan;
                 font-weight: bold;
             }
+            @include desktop {
+                font-size: 1rem;
+                margin: 0;
+            }
         }
         h2{
             color: $color_yellow;
+            @include desktop {
+
+                    font-size: 2rem;
+            }
         }
 
         // Changement de texte
@@ -141,32 +153,90 @@ section {
                 animation: blink 1.3s infinite linear;
             }
         }
+        @include desktop {
+            margin: 10rem;
+        }
+    }
+
+    #imageBackground {
+        display: none;
+        @include desktop {
+            display: block;
+            position: absolute;
+            left: 45%;
+            opacity: 0.5;
+            height: 60%;
+            width: 50%;
+            background-image: url('../media/yep.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            filter: invert(0.2);
+
+            &:hover {
+                transition: all 0.3s;
+                opacity: 1;
+            }
+        }
+
     }
 }
 
-    #sectionBtnDown {
-        // animation: animScrollDown 4.5s infinite ease-out;
-        position: absolute;
-        height: 10rem;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
+// Bouton scroll down
+#sectionBtnDown {
+    position: absolute;
+    padding-left: 10rem;
+    height: 100%;
+    top: 70%;
+    .verticalLine {
+        width: 2px;
+        height: 100px;
+        background: $color_white;
+        margin: 10px auto;
+    }
+    p {
+        writing-mode: vertical-lr;
+        text-orientation: upleft;
+    }
 
-        svg {
-            transform: scale(0.15);
-            filter: drop-shadow(-20px -15px  rgba(cyan, 0.5) );
-            animation: animScrollDown 3.5s both infinite;
+}
 
-            .st2{
-                transform-origin: top;
-                transform: scale(0.95);
-                // animation: animScrollDown 4s infinite ;
+    // #sectionBtnDown {
+    //     // animation: animScrollDown 4.5s infinite ease-out;
+    //     position: absolute;
+    //     height: 10rem;
+    //     left: 0;
+    //     right: 0;
+    //     margin-left: auto;
+    //     margin-right: auto;
+
+    //     svg {
+    //         transform: scale(0.15);
+    //         filter: drop-shadow(-20px -15px  rgba(cyan, 0.5) );
+    //         animation: animScrollDown 3.5s both infinite;
+
+    //         .st2{
+    //             transform-origin: top;
+    //             transform: scale(0.95);
+    //             // animation: animScrollDown 4s infinite ;
+    //         }
+    //     }
+    // }
+ 
+// section ABOUT -------------------------------------------
+#sectionAbout {
+     .container {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+
+        .aboutMe {
+            p {
+                width: 400px;
             }
         }
     }
- 
-
+}
 // section WORK -------------------------------------------
 #sectionWork {
     display: block;
@@ -225,6 +295,91 @@ section {
     }
 }
 
+.shapes {
+    position: fixed;
+}
+
+.square {
+    position: fixed;
+    top: 200px;
+    left: 800px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.15;
+    background-color: transparent;
+    border: 3px solid $color_cyan;
+}
+.square1 {
+    position: fixed;
+    top: 700px;
+    left: 1600px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.15;
+    background-color: transparent;
+    border: 2px solid $color_cyan;
+}
+.circle {
+    position: fixed;
+    opacity: 0.15;
+    top: 600px;
+    left: 700px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $color_yellow;
+}
+
+.circle2{
+    position: fixed;
+    opacity: 0.15;
+    top: 100px;
+    left: 1400px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $color_yellow;
+}
+
+.float {
+    animation-name: Floating;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floating {
+    from {
+        transform: translate(0, 0px);
+    }
+
+    65% {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(0, -0px);
+    }
+}
+
+.spin {
+    animation-name: Spinning;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes Spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 // DESKTOP -------------------------------------------------
 @media screen and (min-width: 1024px) { 

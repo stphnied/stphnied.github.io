@@ -22,11 +22,13 @@
                 display: flex;
 
                 .numeroSection{
-                    font-family: 'Azonix';
+                    font-family: Azonix;
                     color: $color_yellow;
                     text-align: right;
                     &:hover {
                         transform:translateX(-20px);
+                        transition: 0.5 all;
+                        content: 'aaa';
                         ~.nomSection{
                             display: inline;
                         }

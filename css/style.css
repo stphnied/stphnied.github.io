@@ -172,7 +172,7 @@ Animation header
 }
 
 #nav ul li a .numeroSection {
-  font-family: 'Azonix';
+  font-family: Azonix;
   color: #f4ae34;
   text-align: right;
 }
@@ -180,6 +180,9 @@ Animation header
 #nav ul li a .numeroSection:hover {
   -webkit-transform: translateX(-20px);
           transform: translateX(-20px);
+  -webkit-transition: 0.5 all;
+  transition: 0.5 all;
+  content: 'aaa';
 }
 
 #nav ul li a .numeroSection:hover ~ .nomSection {
@@ -263,11 +266,12 @@ section {
           transform: translate3d(0, 0, 0);
   -webkit-animation: LeftSlideIn 1s forwards;
           animation: LeftSlideIn 1s forwards;
-  text-shadow: -0.25rem -0.15rem rgba(0, 255, 255, 0.5), 0 0.25rem rgba(255, 255, 0, 0.5);
 }
 
-#sectionAccueil div h1:hover {
-  text-shadow: -0.5rem -0.05rem rgba(0, 255, 255, 0.5), 0 0.5rem rgba(255, 255, 0, 0.5);
+@media (min-width: 992px) {
+  #sectionAccueil div h1 {
+    font-size: 2.5rem;
+  }
 }
 
 #sectionAccueil div p {
@@ -293,8 +297,21 @@ section {
   font-weight: bold;
 }
 
+@media (min-width: 992px) {
+  #sectionAccueil div p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
 #sectionAccueil div h2 {
   color: #f4ae34;
+}
+
+@media (min-width: 992px) {
+  #sectionAccueil div h2 {
+    font-size: 2rem;
+  }
 }
 
 #sectionAccueil div .textChanger {
@@ -352,29 +369,72 @@ section {
           animation: blink 1.3s infinite linear;
 }
 
+@media (min-width: 992px) {
+  #sectionAccueil div {
+    margin: 10rem;
+  }
+}
+
+#sectionAccueil #imageBackground {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #sectionAccueil #imageBackground {
+    display: block;
+    position: absolute;
+    left: 45%;
+    opacity: 0.5;
+    height: 60%;
+    width: 50%;
+    background-image: url("../media/yep.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-filter: invert(0.2);
+            filter: invert(0.2);
+  }
+  #sectionAccueil #imageBackground:hover {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 1;
+  }
+}
+
 #sectionBtnDown {
   position: absolute;
-  height: 10rem;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 10rem;
+  height: 100%;
+  top: 70%;
 }
 
-#sectionBtnDown svg {
-  -webkit-transform: scale(0.15);
-          transform: scale(0.15);
-  -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-          filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-  -webkit-animation: animScrollDown 3.5s both infinite;
-          animation: animScrollDown 3.5s both infinite;
+#sectionBtnDown .verticalLine {
+  width: 2px;
+  height: 100px;
+  background: #f1f1f1;
+  margin: 10px auto;
 }
 
-#sectionBtnDown svg .st2 {
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+#sectionBtnDown p {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  text-orientation: upleft;
+}
+
+#sectionAbout .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sectionAbout .container .aboutMe p {
+  width: 400px;
 }
 
 #sectionWork {
@@ -446,5 +506,114 @@ section {
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
   text-shadow: 5px 5px black;
+}
+
+.shapes {
+  position: fixed;
+}
+
+.square {
+  position: fixed;
+  top: 200px;
+  left: 800px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.15;
+  background-color: transparent;
+  border: 3px solid rgba(0, 255, 255, 0.5);
+}
+
+.square1 {
+  position: fixed;
+  top: 700px;
+  left: 1600px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.15;
+  background-color: transparent;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.circle {
+  position: fixed;
+  opacity: 0.15;
+  top: 600px;
+  left: 700px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #f4ae34;
+}
+
+.circle2 {
+  position: fixed;
+  opacity: 0.15;
+  top: 100px;
+  left: 1400px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #f4ae34;
+}
+
+.float {
+  -webkit-animation-name: Floating;
+          animation-name: Floating;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floating {
+  from {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+  65% {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+}
+
+.spin {
+  -webkit-animation-name: Spinning;
+          animation-name: Spinning;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes Spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
