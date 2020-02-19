@@ -177,20 +177,8 @@ Animation header
   text-align: right;
 }
 
-#nav ul li a .numeroSection:hover {
-  -webkit-transform: translateX(-20px);
-          transform: translateX(-20px);
-  -webkit-transition: 0.5 all;
-  transition: 0.5 all;
-  content: 'aaa';
-}
-
-#nav ul li a .numeroSection:hover ~ .nomSection {
-  display: inline;
-}
-
 #nav ul li a .nomSection {
-  display: none;
+  opacity: 0.4;
   font-family: Codec;
   text-transform: uppercase;
   color: #f1f1f1;
@@ -199,12 +187,6 @@ Animation header
 /* ----------- # Layout ------------ */
 * {
   font-family: Codec,'sans-serif';
-}
-
-html {
-  scroll-behavior: smooth;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
 }
 
 @font-face {
@@ -403,7 +385,6 @@ section {
 #sectionBtnDown {
   position: absolute;
   padding-left: 10rem;
-  height: 100%;
   top: 70%;
 }
 
@@ -435,6 +416,24 @@ section {
 
 #sectionAbout .container .aboutMe p {
   width: 400px;
+}
+
+#sectionAbout .container .aboutMe ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#sectionAbout .container .aboutMe ul a {
+  color: #f4ae34;
+}
+
+#sectionAbout .container .aboutMe ul li {
+  list-style-type: none;
+  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 #sectionWork {

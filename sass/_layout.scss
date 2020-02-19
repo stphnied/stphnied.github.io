@@ -3,8 +3,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    // scroll-behavior: smooth;
+    // scroll-snap-type: y mandatory;
 }
 // Stylized title font
 @font-face {
@@ -185,7 +185,7 @@ section {
 #sectionBtnDown {
     position: absolute;
     padding-left: 10rem;
-    height: 100%;
+    // height: 100%;
     top: 70%;
     .verticalLine {
         width: 2px;
@@ -233,6 +233,19 @@ section {
         .aboutMe {
             p {
                 width: 400px;
+            }
+            ul {
+                display: flex;
+                margin: 0;
+                padding-left: 10px;
+                a{
+                    color: $color_yellow;
+                }
+                li {
+                    list-style-type: none;
+                    margin-right:10px;
+                    font-size: 1.5rem;
+                }
             }
         }
     }
