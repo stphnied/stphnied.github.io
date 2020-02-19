@@ -1,0 +1,71 @@
+/*
+Animation header
+*/
+// Animation slide-in gauche
+@keyframes LeftSlideIn {
+    from {
+        transform: translate3d(-400px, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// Animation apparition avec slide-in top
+@keyframes txtAppears {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// Animation slide-in down
+@keyframes txtSlideDown {
+    from {
+        transform: translate3d(0, -300px, -400px);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// Animation de l'indicateur de texte
+@keyframes blink {
+    0% {
+        border-color: $color_white;
+    }
+
+    50% {
+        border-color: $color_black;
+    }
+
+    100% {
+        border-color: $color_white;
+    }
+}
+
+/* Animation de la flèche de défilement */
+@keyframes animScrollDown {
+    from {
+        filter: drop-shadow(20px 15px rgba(yellow, 0.5));
+
+    }
+
+    50% {
+        // transform: translateY(10px);
+        filter: drop-shadow(-20px -15px rgba(cyan, 0.5));
+
+    }
+
+    to {
+        filter: drop-shadow(20px 15px rgba(yellow, 0.5));
+
+    }
+}

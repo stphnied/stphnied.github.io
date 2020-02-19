@@ -1,0 +1,23 @@
+@mixin flex($flexDirect, $alignItems, $justCont) {
+    align-items: $alignItems;
+    display: flex;
+    flex-direction: $flexDirect;
+    justify-content: $justCont;
+}
+
+@mixin taille($hauteur, $largeur) {
+    height: $hauteur;
+    width: $largeur;
+}
+
+@mixin tablette() {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media (min-width: 992px) {
+        @content;
+    }
+}

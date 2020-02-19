@@ -5,7 +5,134 @@ Description : Portfolio web
 ---------------------------------- */
 /* --- INDEX des fichiers SCSS --- */
 /* ------------ # Variables ------------ */
+/* ------------ # Variables ------------ */
 /* ----------- # Anim ------------ */
+/*
+Animation header
+*/
+@-webkit-keyframes LeftSlideIn {
+  from {
+    -webkit-transform: translate3d(-400px, 0, 0);
+            transform: translate3d(-400px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes LeftSlideIn {
+  from {
+    -webkit-transform: translate3d(-400px, 0, 0);
+            transform: translate3d(-400px, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes txtAppears {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes txtAppears {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes txtSlideDown {
+  from {
+    -webkit-transform: translate3d(0, -300px, -400px);
+            transform: translate3d(0, -300px, -400px);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes txtSlideDown {
+  from {
+    -webkit-transform: translate3d(0, -300px, -400px);
+            transform: translate3d(0, -300px, -400px);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    border-color: #f1f1f1;
+  }
+  50% {
+    border-color: #161515;
+  }
+  100% {
+    border-color: #f1f1f1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: #f1f1f1;
+  }
+  50% {
+    border-color: #161515;
+  }
+  100% {
+    border-color: #f1f1f1;
+  }
+}
+
+/* Animation de la flèche de défilement */
+@-webkit-keyframes animScrollDown {
+  from {
+    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+  }
+  50% {
+    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
+            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
+  }
+  to {
+    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+  }
+}
+@keyframes animScrollDown {
+  from {
+    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+  }
+  50% {
+    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
+            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
+  }
+  to {
+    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
+  }
+}
+
 /* ------------ # Menu ------------ */
 #nav ul {
   position: fixed;
@@ -139,28 +266,6 @@ section {
   text-shadow: -0.25rem -0.15rem rgba(0, 255, 255, 0.5), 0 0.25rem rgba(255, 255, 0, 0.5);
 }
 
-@-webkit-keyframes LeftSlideIn {
-  from {
-    -webkit-transform: translate3d(-400px, 0, 0);
-            transform: translate3d(-400px, 0, 0);
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes LeftSlideIn {
-  from {
-    -webkit-transform: translate3d(-400px, 0, 0);
-            transform: translate3d(-400px, 0, 0);
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
 #sectionAccueil div h1:hover {
   text-shadow: -0.5rem -0.05rem rgba(0, 255, 255, 0.5), 0 0.5rem rgba(255, 255, 0, 0.5);
 }
@@ -174,32 +279,6 @@ section {
   white-space: pre-line;
   -webkit-animation: txtAppears 1s forwards 2s;
           animation: txtAppears 1s forwards 2s;
-}
-
-@-webkit-keyframes txtAppears {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-@keyframes txtAppears {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
 }
 
 #sectionAccueil div p:before {
@@ -266,57 +345,11 @@ section {
           animation: txtSlideDown 2.3s forwards ease-out;
 }
 
-@-webkit-keyframes txtSlideDown {
-  from {
-    -webkit-transform: translate3d(0, -300px, -400px);
-            transform: translate3d(0, -300px, -400px);
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes txtSlideDown {
-  from {
-    -webkit-transform: translate3d(0, -300px, -400px);
-            transform: translate3d(0, -300px, -400px);
-  }
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
 #sectionAccueil div #textDesigner h2:last-child {
   padding-right: 2px;
   border-right: 0.05em solid #f4ae34;
   -webkit-animation: blink 1.3s infinite linear;
           animation: blink 1.3s infinite linear;
-}
-
-@-webkit-keyframes blink {
-  0% {
-    border-color: #f1f1f1;
-  }
-  50% {
-    border-color: #161515;
-  }
-  100% {
-    border-color: #f1f1f1;
-  }
-}
-
-@keyframes blink {
-  0% {
-    border-color: #f1f1f1;
-  }
-  50% {
-    border-color: #161515;
-  }
-  100% {
-    border-color: #f1f1f1;
-  }
 }
 
 #sectionBtnDown {
@@ -342,36 +375,6 @@ section {
           transform-origin: top;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
-}
-
-/* Animation de la flèche de défilement */
-@-webkit-keyframes animScrollDown {
-  from {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-  50% {
-    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-  }
-  to {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-}
-@keyframes animScrollDown {
-  from {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-  50% {
-    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-  }
-  to {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
 }
 
 #sectionWork {
