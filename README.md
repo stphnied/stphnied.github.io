@@ -1,2 +1,2 @@
-# https-stphnied.github.io
+stphnied.github.io
 Portfolio website 
