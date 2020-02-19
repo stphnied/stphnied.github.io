@@ -1,0 +1,296 @@
+* {
+    font-family: Codec,'sans-serif';
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+// Stylized title font
+@font-face {
+    font-family: Elianto;
+    src: url('../fonts/Elianto.otf');
+}
+// Regular font; doesn't include numbers 
+@font-face {
+    font-family: Codec;
+    src: url('../fonts/Codec.ttf');
+}
+// Title fonts 
+@font-face {
+    font-family: Azonix;
+    src: url('../fonts/Azonix.otf');
+}
+
+h1,h2 {
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+body {
+    box-sizing: border-box;
+    background-color : $color_black;
+    color: $color_white;
+    border-left: 5px solid $color_yellow;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+
+// Section ACCUEIL -------------------------------------------
+#sectionAccueil {
+    display: flex;
+    // flex: 45%;
+    flex-flow: column;
+    justify-content: center;
+    
+    div {
+        padding-bottom: 2rem;
+        margin-left: 2rem;
+        h1 {
+            font-size: 2.1rem;
+            font-family: Elianto;
+            transform: translate3d(0,0,0);
+            animation: LeftSlideIn 1s forwards;
+
+            // Animation slide-in gauche
+            @keyframes LeftSlideIn {
+                from {
+                    transform: translate3d(-400px, 0, 0);
+                }
+                to {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            // text-shadow: -3px 0 0 rgba(255, 0, 0, .7),
+            // 3px 0 0 rgba(0, 255, 255, .7);
+              text-shadow:
+              -0.25rem -0.15rem rgba(cyan, 0.5),
+              0 0.25rem rgba(yellow, 0.5);
+              &:hover{
+                    text-shadow: -0.5rem -0.05rem rgba(cyan, 0.5),
+                    0 0.5rem rgba(yellow, 0.5);
+              }
+        }
+        p {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-left: 1.75rem;
+            opacity: 0;
+            text-transform: uppercase;
+            white-space: pre-line;
+            animation: txtAppears 1s forwards 2s;
+
+            // Animation apparition avec slide-in top
+            @keyframes txtAppears {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            &:before {
+                content: '\007B';
+                color: $color_cyan;
+                font-weight: bold;
+
+            }
+            &:after {
+                content: '\007D';
+                color: $color_cyan;
+                font-weight: bold;
+            }
+        }
+        h2{
+            color: $color_yellow;
+        }
+
+        // Changement de texte
+        .textChanger {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin:0;
+            // perspective: 100vw;
+
+            >div {
+                // position: absolute;
+                top: 0;
+                // width: 50%;
+                // height: 100%;
+                color: $color_white;
+                animation: open ease-in 1s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+                display: flex;
+                align-items: center;
+                >span {
+                    display: inline-block;
+                }
+            }
+
+            .right {
+                margin: 0;
+                height: 5rem;
+                width: auto;
+                // text-align: left;
+                #textDesigner {
+                    display: flex;
+                }
+                &:before,&:after {
+                    content: '\003C \0020 \002F \0020 \003E';
+                    color: $color_white;
+                    font-weight: bold;
+                    // color: $color_cyan;
+                    // transform:translate3d(-100px,0,0);
+                    animation: txtSlideDown 2.3s forwards ease-out;
+
+                    // Animation slide-in down
+                    @keyframes txtSlideDown {
+                        from {
+                            transform: translate3d(0,-300px, -400px);
+                        }
+
+                        to {
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Texte descriptif changeant
+        #textDesigner {
+            h2:last-child {
+                padding-right: 2px;
+                border-right: .05em solid $color_yellow;
+                animation: blink 1.3s infinite linear;
+            }
+        }
+        // Animation de l'indicateur de texte
+        @keyframes blink {
+            0% {
+                border-color: $color_white;
+            }
+
+            50% {
+                border-color: $color_black;
+            }
+
+            100% {
+                border-color: $color_white;
+            }
+        }
+    }
+}
+
+    #sectionBtnDown {
+        // animation: animScrollDown 4.5s infinite ease-out;
+        position: absolute;
+        height: 10rem;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        svg {
+            transform: scale(0.15);
+            filter: drop-shadow(-20px -15px  rgba(cyan, 0.5) );
+            animation: animScrollDown 3.5s both infinite;
+
+            .st2{
+                transform-origin: top;
+                transform: scale(0.95);
+                // animation: animScrollDown 4s infinite ;
+            }
+        }
+    }
+    /* Animation de la flèche de défilement */
+    @keyframes animScrollDown {
+        from {
+             filter: drop-shadow(20px 15px rgba(yellow, 0.5));
+
+        }
+
+        50% {
+            // transform: translateY(10px);
+             filter: drop-shadow(-20px -15px  rgba(cyan, 0.5));
+
+        }
+
+        to {
+             filter: drop-shadow( 20px 15px rgba(yellow, 0.5));
+
+        }
+    }
+
+// section WORK -------------------------------------------
+#sectionWork {
+    display: block;
+    h1 {
+        position: absolute;
+        margin: 30px;
+    }
+    .workDiv {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .cardWork {
+            display: flex;
+            position: relative;
+            background: pink;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            transform: rotateX(0) rotateY(0);
+            transform-style: preserve-3d;
+            transition-duration: 0.2s;
+            transition-timing-function: ease;
+            transform: perspective(600px) rotateY(-30deg);
+
+            &:hover {
+                transform: perspective(0) rotateY(0deg);
+            }
+
+        }
+        #work2 {
+            // display: none;
+        }
+        .cardOverlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            // background: lightblue;
+            img{
+                height:100%;
+            }
+        }
+        .cardTitle {
+           position: absolute;
+           bottom: -35px;
+           right: -20px;
+           width:100%;
+            h2 {
+                font-family: Azonix;
+                text-align: right;
+                transform: translateZ(20px);
+                text-shadow: 5px 5px darken($color_black,50%);
+            }
+        }
+    }
+}
+
+
+// DESKTOP -------------------------------------------------
+@media screen and (min-width: 1024px) { 
+
+}

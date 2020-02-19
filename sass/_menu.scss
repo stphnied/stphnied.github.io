@@ -1,0 +1,45 @@
+#nav {
+    ul {
+        position: fixed;
+        right: 1rem;
+        bottom:1.25rem;
+        display: block;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        li{
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom:20px;
+            width: 5rem;
+            height: 0.25rem;
+            list-style: none;
+            cursor: pointer;
+            a{
+                // width: 3rem;
+                position: absolute;
+                text-decoration: none;
+                display: flex;
+
+                .numeroSection{
+                    font-family: 'Azonix';
+                    color: $color_yellow;
+                    text-align: right;
+                    &:hover {
+                        transform:translateX(-20px);
+                        ~.nomSection{
+                            display: inline;
+                        }
+                    }
+                }
+                .nomSection{
+                    display: none;
+                    font-family: Codec;
+                    text-transform: uppercase;
+                    color: $color_white;
+                }
+            }
+
+        }
+    }
+}
