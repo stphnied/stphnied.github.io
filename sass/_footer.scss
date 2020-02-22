@@ -7,10 +7,9 @@
     // position: absolute;
     // bottom: 20px;
     // left: 20px;
-}
-
-.menuFooter:hover {
-    pointer-events: all;
+    &:hover {
+        pointer-events: all;
+    }
 }
 
 .titleFooter {
@@ -27,16 +26,17 @@
     vertical-align: middle;
     cursor: pointer;
     position: relative;
-}
 
-.divider:before {
-    content: "";
-    position: absolute;
-    border-bottom: 1px solid $color_yellow;
-    height: 1px;
-    width: 0%;
-    transition: width 0.25s ease;
-    transition-delay: 0.7s;
+    //Separateur
+    &:before {
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid $color_yellow;
+        height: 1px;
+        width: 0%;
+        transition: width 0.25s ease;
+        transition-delay: 0.7s;
+    }
 }
 
 .itemFooter {
@@ -48,10 +48,16 @@
     transition: opacity 0.5s ease, top 0.5s ease;
     transition-delay: 0;
 
-    &:hover {
-        transition: color 0.25s ease;
-        color: #ff0000;
+    a {
+        text-decoration: none;
+        color: $color_white;
+        &:hover {
+            transition: color 0.25s ease;
+            color: darken($color_yellow,25%);
+        }
     }
+
+
 }
 
 .menuFooter:hover .divider:before {
