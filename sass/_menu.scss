@@ -2,26 +2,28 @@
     ul {
         position: fixed;
         right: 1rem;
-        bottom:1.25rem;
+        bottom: 1.25rem;
         display: block;
         margin: 0;
         display: flex;
         flex-direction: column;
-        li{
+
+        li {
             display: flex;
             justify-content: flex-end;
-            margin-bottom:20px;
+            margin-bottom: 20px;
             width: 5rem;
             height: 0.25rem;
             list-style: none;
             cursor: pointer;
-            a{
+
+            a {
                 // width: 3rem;
                 position: absolute;
                 text-decoration: none;
                 display: flex;
 
-                .numeroSection{
+                .numeroSection {
                     font-family: Azonix;
                     color: $color_yellow;
                     text-align: right;
@@ -34,7 +36,8 @@
                     //     }
                     // }
                 }
-                .nomSection{
+
+                .nomSection {
                     // display: none;
                     opacity: 0.4;
                     font-family: Codec;
@@ -45,4 +48,47 @@
 
         }
     }
+}
+
+// -----------------
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.l-wrapper {
+    position: relative;
+     width: 1440px;
+      max-width: 90% ;
+      height: 100% ;
+      margin: 0 auto;
+}
+
+.l-side-nav {
+    position: absolute;
+    left: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%); 
+            width: 2px;
+            height: 70%;
+            max-height: 750px;
+            background-color: #555;
+            opacity: 0.35;
+            z-index: 10;
+        } 
 }
