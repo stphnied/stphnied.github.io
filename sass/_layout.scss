@@ -1,6 +1,6 @@
 html {
-    // scroll-behavior: smooth;
-    // scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; 
 }
 
 // Stylized title font
@@ -48,7 +48,7 @@ section {
     height: 100vh;
     width: 90vw;
     margin: 0 auto;
-    // scroll-snap-align: start;
+    scroll-snap-align: start;
 }
 
 header {
@@ -57,8 +57,14 @@ header {
         top: 2rem;
         right: 1.25rem;
         height: 3rem;
+        cursor: pointer;
         .st0,.st1 {
             fill: $color_white;
+        }
+        &:active {
+            animation: logoIn 0.5s;
+            transform: rotate(0deg) scale(1) translateZ(0);
+            transition: all 0.4s cubic-bezier(.5, 1.5, .75, .75);
         }
     }
 }
@@ -205,6 +211,7 @@ header {
 
 // Bouton scroll down
 #sectionBtnDown {
+    cursor: pointer;
     position: absolute;
     padding-left: 10rem;
     // height: 100%;
@@ -348,8 +355,8 @@ header {
 #sectionWork {
     display: block;
     h1 {
-        position: absolute;
-        margin: 30px;
+        // position: absolute;
+        // margin: 30px;
     }
     .workDiv {
         display: flex;
@@ -360,14 +367,14 @@ header {
             display: flex;
             position: relative;
             background: pink;
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             margin: 0 auto;
             transform: rotateX(0) rotateY(0);
             transform-style: preserve-3d;
             transition-duration: 0.2s;
             transition-timing-function: ease;
-            transform: perspective(600px) rotateY(-30deg);
+            transform: perspective(600px) rotateY(-5deg);
 
             &:hover {
                 transform: perspective(0) rotateY(0deg);
@@ -393,7 +400,7 @@ header {
            right: -20px;
            width:100%;
             h2 {
-                // font-family: Azonix;
+                font-family: Azonix;
                 text-align: right;
                 transform: translateZ(20px);
                 text-shadow: 5px 5px darken($color_black,50%);
@@ -487,6 +494,21 @@ header {
         transform: rotate(360deg);
     }
 }
+//  CONTACT---------------------------------------------------------------------------------------------------------------------------
+#sectionContact {
+    display: flex;
+    align-items: center;
+    margin: 0 10.5rem;
+    .verticalLine {
+        width: 2px;
+        height: 200px;
+        background: $color_white;
+    }
+    h1 {
+        font-family: Elianto;
+    }
+}
+
 
 // DESKTOP ---------------------------------------------------------------------------------------------------------------------------
 @media screen and (min-width: 1024px) { 

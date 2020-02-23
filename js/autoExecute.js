@@ -15,9 +15,5 @@
             d.body.scrollTop = window.innerHeight; //Safari
             d.documentElement.scrollTop = window.innerHeight;
         });
-
-        //Parallax hover
-
-        
         
 })();

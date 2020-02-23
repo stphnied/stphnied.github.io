@@ -10,6 +10,51 @@ Description : Portfolio web
 /*
 Animation header
 */
+@-webkit-keyframes logoIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes logoIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 @-webkit-keyframes LeftSlideIn {
   from {
     -webkit-transform: translate3d(-400px, 0, 0);
@@ -20,6 +65,7 @@ Animation header
             transform: translate3d(0, 0, 0);
   }
 }
+
 @keyframes LeftSlideIn {
   from {
     -webkit-transform: translate3d(-400px, 0, 0);
@@ -202,6 +248,12 @@ Animation header
 }
 
 /* ----------- # Layout ------------ */
+html {
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
 @font-face {
   font-family: Elianto;
   src: url("../fonts/Elianto.otf");
@@ -244,6 +296,7 @@ section {
   height: 100vh;
   width: 90vw;
   margin: 0 auto;
+  scroll-snap-align: start;
 }
 
 header svg {
@@ -251,10 +304,20 @@ header svg {
   top: 2rem;
   right: 1.25rem;
   height: 3rem;
+  cursor: pointer;
 }
 
 header svg .st0, header svg .st1 {
   fill: #f1f1f1;
+}
+
+header svg:active {
+  -webkit-animation: logoIn 0.5s;
+          animation: logoIn 0.5s;
+  -webkit-transform: rotate(0deg) scale(1) translateZ(0);
+          transform: rotate(0deg) scale(1) translateZ(0);
+  -webkit-transition: all 0.4s cubic-bezier(0.5, 1.5, 0.75, 0.75);
+  transition: all 0.4s cubic-bezier(0.5, 1.5, 0.75, 0.75);
 }
 
 #sectionAccueil {
@@ -417,6 +480,7 @@ header svg .st0, header svg .st1 {
 }
 
 #sectionBtnDown {
+  cursor: pointer;
   position: absolute;
   padding-left: 10rem;
   top: 70%;
@@ -546,11 +610,6 @@ header svg .st0, header svg .st1 {
   display: block;
 }
 
-#sectionWork h1 {
-  position: absolute;
-  margin: 30px;
-}
-
 #sectionWork .workDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -567,8 +626,8 @@ header svg .st0, header svg .st1 {
   display: flex;
   position: relative;
   background: pink;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin: 0 auto;
   -webkit-transform: rotateX(0) rotateY(0);
           transform: rotateX(0) rotateY(0);
@@ -578,8 +637,8 @@ header svg .st0, header svg .st1 {
           transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
-  -webkit-transform: perspective(600px) rotateY(-30deg);
-          transform: perspective(600px) rotateY(-30deg);
+  -webkit-transform: perspective(600px) rotateY(-5deg);
+          transform: perspective(600px) rotateY(-5deg);
 }
 
 #sectionWork .workDiv .cardWork:hover {
@@ -606,6 +665,7 @@ header svg .st0, header svg .st1 {
 }
 
 #sectionWork .workDiv .cardTitle h2 {
+  font-family: Azonix;
   text-align: right;
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
@@ -721,6 +781,26 @@ header svg .st0, header svg .st1 {
   }
 }
 
+#sectionContact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 10.5rem;
+}
+
+#sectionContact .verticalLine {
+  width: 2px;
+  height: 200px;
+  background: #f1f1f1;
+}
+
+#sectionContact h1 {
+  font-family: Elianto;
+}
+
 /* ----------- # Footer ------------ */
 .menuFooter {
   display: inline-block;
@@ -732,12 +812,31 @@ header svg .st0, header svg .st1 {
   padding-top: 50px;
   text-transform: uppercase;
   color: #f1f1f1;
+  opacity: 0.5;
   cursor: pointer;
   pointer-events: none;
 }
 
 .menuFooter:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   pointer-events: all;
+  opacity: 1;
+}
+
+.menuFooter:hover .fa-star {
+  color: #f4ae34;
+}
+
+.menuFooter:hover .divider:before {
+  width: 100%;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.menuFooter:hover .itemFooter {
+  opacity: 1;
+  top: 0px;
 }
 
 .titleFooter {
@@ -791,17 +890,6 @@ header svg .st0, header svg .st1 {
   color: #a06909;
 }
 
-.menuFooter:hover .divider:before {
-  width: 100%;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
-.menuFooter:hover .itemFooter {
-  opacity: 1;
-  top: 0px;
-}
-
 .itemFooter:nth-child(1) {
   -webkit-transition-delay: 0.45s;
           transition-delay: 0.45s;
@@ -837,21 +925,6 @@ header svg .st0, header svg .st1 {
           transition-delay: 0.15s;
 }
 
-.itemFooter:nth-child(8) {
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-}
-
-.itemFooter:nth-child(9) {
-  -webkit-transition-delay: 0.05s;
-          transition-delay: 0.05s;
-}
-
-.itemFooter:nth-child(10) {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-
 .menuFooter:hover .itemFooter:nth-child(1) {
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
@@ -885,20 +958,5 @@ header svg .st0, header svg .st1 {
 .menuFooter:hover .itemFooter:nth-child(7) {
   -webkit-transition-delay: 0.55s;
           transition-delay: 0.55s;
-}
-
-.menuFooter:hover .itemFooter:nth-child(8) {
-  -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
-}
-
-.menuFooter:hover .itemFooter:nth-child(9) {
-  -webkit-transition-delay: 0.65s;
-          transition-delay: 0.65s;
-}
-
-.menuFooter:hover .itemFooter:nth-child(10) {
-  -webkit-transition-delay: 0.7s;
-          transition-delay: 0.7s;
 }
 /*# sourceMappingURL=style.css.map */
