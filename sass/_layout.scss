@@ -1,11 +1,8 @@
-* {
-    font-family: Codec,'sans-serif';
+html {
+    // scroll-behavior: smooth;
+    // scroll-snap-type: y mandatory; 
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory; 
-}
 // Stylized title font
 @font-face {
     font-family: Elianto;
@@ -21,6 +18,11 @@ html {
     font-family: Azonix;
     src: url('../fonts/Azonix.otf');
 }
+
+* {
+    font-family: Codec, 'sans-serif';
+}
+
 
 h1,h2 {
     font-weight: 100;
@@ -49,7 +51,18 @@ section {
     // scroll-snap-align: start;
 }
 
-// Section ACCUEIL -------------------------------------------
+header {
+    svg {
+        position: fixed;
+        top: 2rem;
+        right: 1.25rem;
+        height: 3rem;
+        .st0,.st1 {
+            fill: $color_white;
+        }
+    }
+}
+// Section ACCUEIL ---------------------------------------------------------------------------------------------------------------------------ACCUEIL
 #sectionAccueil {
     display: flex;
     // flex: 45%;
@@ -231,35 +244,107 @@ section {
     //     }
     // }
  
-// section ABOUT -------------------------------------------
+// section ABOUT ---------------------------------------------------------------------------------------------------------------------------ABOUT
 #sectionAbout {
-     .container {
+    
+    h1 {
+        display: none;
+    }    
+
+    .container {
         display: flex;
         height: 100%;
         justify-content: space-around;
         align-items: center;
 
         .aboutMe {
+            height: 50%;
             p {
                 width: 400px;
+                word-spacing: 0.2rem;
             }
+
             ul {
                 display: flex;
                 margin: 0;
                 padding-left: 10px;
-                a{
-                    color: $color_yellow;
-                }
+
                 li {
                     list-style-type: none;
                     margin-right:10px;
                     font-size: 1.5rem;
                 }
+                
+                a {
+                    color: $color_yellow;
+                    opacity: 0.5;
+                    &:hover {opacity: 1;}
+                }
+            }
+
+            hr {
+                margin: 21px 0;
+                margin-right: 100%;
+                opacity: 0.2;
+                background-color: darken($color_yellow, 30%);
+                height: 5px;
+                width: 60px;
+                border: 0;
+            }
+            .yellow {
+                color: $color_yellow;
+            }
+        }
+        //end
+
+        .skills {
+            height: 50%;
+            // Design part
+            #skillDesign {
+                svg {
+                    height: 90px;
+                }
+            }
+
+            #skillProg {
+                margin-top: 5rem;
+
+                .skill-list {
+                    display: flex;
+                    margin: 0;
+                    padding-left: 10px;
+
+                    .skill {
+                        list-style-type: none;
+                        margin-right: 10px;
+                        font-size: 0.75rem;
+
+                        h3 {
+                            font-size: 0.5rem;
+                            font-family: Azonix;
+                            font-weight: 100;
+                        }
+
+                        .skill1,.skill2,.skill3,.skill4 {
+                            height:15px;
+                            width: 100px;
+                            background-color: darken($color_white,80%);
+                            &> * {
+                                height:inherit;
+                                width: 50px;
+                                background : $color_cyan;
+                            }
+                        }
+                    }
+
+                }
+
             }
         }
     }
 }
-// section WORK -------------------------------------------
+
+// section WORK --------------------------------------------------------------------------------------------------------------------------- WORK
 #sectionWork {
     display: block;
     h1 {
@@ -308,7 +393,7 @@ section {
            right: -20px;
            width:100%;
             h2 {
-                font-family: Azonix;
+                // font-family: Azonix;
                 text-align: right;
                 transform: translateZ(20px);
                 text-shadow: 5px 5px darken($color_black,50%);
@@ -403,7 +488,7 @@ section {
     }
 }
 
-// DESKTOP -------------------------------------------------
+// DESKTOP ---------------------------------------------------------------------------------------------------------------------------
 @media screen and (min-width: 1024px) { 
 
 }

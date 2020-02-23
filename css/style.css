@@ -202,16 +202,6 @@ Animation header
 }
 
 /* ----------- # Layout ------------ */
-* {
-  font-family: Codec,'sans-serif';
-}
-
-html {
-  scroll-behavior: smooth;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-}
-
 @font-face {
   font-family: Elianto;
   src: url("../fonts/Elianto.otf");
@@ -225,6 +215,10 @@ html {
 @font-face {
   font-family: Azonix;
   src: url("../fonts/Azonix.otf");
+}
+
+* {
+  font-family: Codec, 'sans-serif';
 }
 
 h1, h2 {
@@ -250,6 +244,17 @@ section {
   height: 100vh;
   width: 90vw;
   margin: 0 auto;
+}
+
+header svg {
+  position: fixed;
+  top: 2rem;
+  right: 1.25rem;
+  height: 3rem;
+}
+
+header svg .st0, header svg .st1 {
+  fill: #f1f1f1;
 }
 
 #sectionAccueil {
@@ -431,6 +436,10 @@ section {
   text-orientation: upleft;
 }
 
+#sectionAbout h1 {
+  display: none;
+}
+
 #sectionAbout .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -443,8 +452,13 @@ section {
           align-items: center;
 }
 
+#sectionAbout .container .aboutMe {
+  height: 50%;
+}
+
 #sectionAbout .container .aboutMe p {
   width: 400px;
+  word-spacing: 0.2rem;
 }
 
 #sectionAbout .container .aboutMe ul {
@@ -455,14 +469,77 @@ section {
   padding-left: 10px;
 }
 
-#sectionAbout .container .aboutMe ul a {
-  color: #f4ae34;
-}
-
 #sectionAbout .container .aboutMe ul li {
   list-style-type: none;
   margin-right: 10px;
   font-size: 1.5rem;
+}
+
+#sectionAbout .container .aboutMe ul a {
+  color: #f4ae34;
+  opacity: 0.5;
+}
+
+#sectionAbout .container .aboutMe ul a:hover {
+  opacity: 1;
+}
+
+#sectionAbout .container .aboutMe hr {
+  margin: 21px 0;
+  margin-right: 100%;
+  opacity: 0.2;
+  background-color: #885907;
+  height: 5px;
+  width: 60px;
+  border: 0;
+}
+
+#sectionAbout .container .aboutMe .yellow {
+  color: #f4ae34;
+}
+
+#sectionAbout .container .skills {
+  height: 50%;
+}
+
+#sectionAbout .container .skills #skillDesign svg {
+  height: 90px;
+}
+
+#sectionAbout .container .skills #skillProg {
+  margin-top: 5rem;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill {
+  list-style-type: none;
+  margin-right: 10px;
+  font-size: 0.75rem;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill h3 {
+  font-size: 0.5rem;
+  font-family: Azonix;
+  font-weight: 100;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill1, #sectionAbout .container .skills #skillProg .skill-list .skill .skill2, #sectionAbout .container .skills #skillProg .skill-list .skill .skill3, #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 {
+  height: 15px;
+  width: 100px;
+  background-color: #252525;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill1 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill2 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill3 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 > * {
+  height: inherit;
+  width: 50px;
+  background: rgba(0, 255, 255, 0.5);
 }
 
 #sectionWork {
@@ -529,7 +606,6 @@ section {
 }
 
 #sectionWork .workDiv .cardTitle h2 {
-  font-family: Azonix;
   text-align: right;
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
@@ -647,15 +723,15 @@ section {
 
 /* ----------- # Footer ------------ */
 .menuFooter {
-  position: fixed;
-  left: 1.25rem;
-  bottom: 1rem;
+  display: inline-block;
   max-width: none;
-  padding-top: 50px;
+  position: fixed;
   z-index: 100;
+  bottom: 1rem;
+  left: 1.25rem;
+  padding-top: 50px;
   text-transform: uppercase;
   color: #f1f1f1;
-  display: inline-block;
   cursor: pointer;
   pointer-events: none;
 }
