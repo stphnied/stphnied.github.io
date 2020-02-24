@@ -60,19 +60,3 @@ function delTexte(i, arr) {
 setTimeout(function () {
     writeTexte(0, 0, jobPosition);
 }, 2500);
-
-
-
-
-    //  let test = document.getElementById("work1");
-
-    //  test.addEventListener("mouseover", function (event) {
-    //      event.target.style.transform = "translateZ(2px)";
-    //      setTimeout(function () {
-    //          event.target.style.transform = "";
-    //      }, 500);
-    //  }, false);
-
-
-    
-    

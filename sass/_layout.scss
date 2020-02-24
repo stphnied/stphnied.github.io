@@ -23,7 +23,6 @@ html {
     font-family: Codec, 'sans-serif';
 }
 
-
 h1,h2 {
     font-weight: 100;
     text-transform: uppercase;
@@ -36,6 +35,7 @@ body {
     background-color : $color_black;
     border-left: 5px solid $color_yellow;
     color: $color_white;
+    overflow:scroll;
 }
 
 // Hide scrollbar 
@@ -43,20 +43,27 @@ body {
     display: none;
 }
 
-
 section {
     height: 100vh;
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto;
     scroll-snap-align: start;
+
+    @include desktop {
+        width: 90vw;
+    }
 }
 
 header {
-    svg {
-        position: fixed;
-        top: 2rem;
-        right: 1.25rem;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top:2rem;
+    svg {      
         height: 3rem;
+        margin-right: 2rem;
         cursor: pointer;
         .st0,.st1 {
             fill: $color_white;
@@ -66,6 +73,21 @@ header {
             transform: rotate(0deg) scale(1) translateZ(0);
             transition: all 0.4s cubic-bezier(.5, 1.5, .75, .75);
         }
+    }
+    #sectionName {
+        font-family: Elianto;
+        font-size: 1.5rem;
+        opacity: 0.3;
+    }
+
+    hr {
+        opacity: 0.5;
+        right: 0;
+        width: 1px;
+        height: 60px;
+        background-color: white;
+        margin: 0;
+        margin: 0 20px;
     }
 }
 // Section ACCUEIL ---------------------------------------------------------------------------------------------------------------------------ACCUEIL
@@ -253,19 +275,18 @@ header {
  
 // section ABOUT ---------------------------------------------------------------------------------------------------------------------------ABOUT
 #sectionAbout {
-    
     h1 {
         display: none;
     }    
 
     .container {
+        flex-direction: column;
         display: flex;
         height: 100%;
         justify-content: space-around;
         align-items: center;
-
         .aboutMe {
-            height: 50%;
+            height: 45%;
             p {
                 width: 400px;
                 word-spacing: 0.2rem;
@@ -346,6 +367,14 @@ header {
 
                 }
 
+            }
+        }
+        // SUR DESKTOP
+        @include desktop {
+            flex-direction: row;
+
+            .aboutMe {
+                height: 50%;
             }
         }
     }

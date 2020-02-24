@@ -1,57 +1,4 @@
-// #nav {
-//     ul {
-//         position: fixed;
-//         right: 1rem;
-//         bottom: 1.25rem;
-//         display: block;
-//         margin: 0;
-//         display: flex;
-//         flex-direction: column;
-
-//         li {
-//             display: flex;
-//             justify-content: flex-end;
-//             margin-bottom: 20px;
-//             width: 5rem;
-//             height: 0.25rem;
-//             list-style: none;
-//             cursor: pointer;
-
-//             a {
-//                 // width: 3rem;
-//                 position: absolute;
-//                 text-decoration: none;
-//                 display: flex;
-
-//                 .numeroSection {
-//                     font-family: Azonix;
-//                     color: $color_yellow;
-//                     text-align: right;
-//                     &:hover {
-//                         transform:translateX(-20px);
-//                         transition: 0.5 all;
-//                         content: 'aaa';
-//                         ~.nomSection{
-//                             display: inline;
-//                         }
-//                     }
-//                 }
-
-//                 .nomSection {
-//                     display: none;
-//                     right: -200px;
-//                     opacity: 0.4;
-//                     font-family: Codec;
-//                     text-transform: uppercase;
-//                     color: $color_white;
-//                 }
-//             }
-
-//         }
-//     }
-// }
-
-// -------------------------------------------------------------------
+// Nav
 #f-menu {
     position: fixed;
     right: -80px;
@@ -66,8 +13,8 @@
         float: right;
         position: relative;
     }
-
     .nav {
+        // Arrows
         a {
             text-align: left;
             display: block;
@@ -79,8 +26,9 @@
             letter-spacing: -1px;
             text-transform: uppercase;
             line-height: 1;
-            margin-bottom: 5px;
+            margin: 1rem 0;
             position: relative;
+            cursor: pointer;
 
             span.numeroSection {
                 font-family: Azonix;
