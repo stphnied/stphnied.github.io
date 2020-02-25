@@ -1,11 +1,15 @@
+"use strict";
+
+var d = document;
+
 /**
  *Fonction permettant d'ecrire les mots dans l'array
  *@param 
  *@return
  */
-var jobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0","\xa0UI\xa0designer\xa0"];
-var textBox = document.getElementById('textDesigner');
-var cursor = document.createElement('span');
+var aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0","\xa0UI\xa0designer\xa0"];
+var textBox = d.getElementById('textDesigner');
+var cursor = d.createElement('span');
 var letters = [];
 
 function writeTexte(i, j, arr) {
@@ -26,7 +30,7 @@ function writeTexte(i, j, arr) {
     }
 
     // Creer un element pour contenir le texte
-    var c = document.createElement('h2');
+    var c = d.createElement('h2');
     c.innerHTML = aPos.charAt(j)
     letters.push(c);
     textBox.appendChild(c);
@@ -58,5 +62,61 @@ function delTexte(i, arr) {
 }
 
 setTimeout(function () {
-    writeTexte(0, 0, jobPosition);
+    writeTexte(0, 0, aJobPosition);
 }, 2500);
+
+
+/**
+ * Fonction permettant de jouer l'anim apres le defil
+ * ----------------------
+ * @param aucun
+ * @return aucun
+ */
+function appearScrollAnim() {
+    var fHauteurSection = window.innerHeight;
+    var fDefileDocElm = d.documentElement.scrollTop;
+    // var oOrdi = window.matchMedia("(min-width: 1024px)");
+    // var oMobile = window.matchMedia("(max-width: 767px");
+    // var oActivites = d.getElementsByClassName("sousActivites");
+
+    var sectAboutMe = d.querySelector(".aboutMe").style;
+    var sectSkills = d.querySelector(".skills").style;
+    var sectContactLine = d.querySelector(".verticalLine2").style;
+    var sectContactTitle = d.querySelector(".contactTitre").style
+
+
+    //Page About
+
+    if (fDefileDocElm <= fHauteurSection) {
+
+    }
+
+    if (fDefileDocElm == fHauteurSection) {
+        sectAboutMe.animation = "leftSlideIn 1s forwards";
+        sectSkills.animation = "rightSlideIn 1s forwards 0.5s";
+    }
+    // Remove anim
+    if (fDefileDocElm >= fHauteurSection * 2) {
+        sectAboutMe.removeProperty("animation");
+        sectSkills.removeProperty("animation");
+    }
+
+    if (fDefileDocElm == fHauteurSection * 2) {
+        // var cardWork = d.querySelectorAll(".cardWork");
+        // let i = 0;
+        // setInterval(function () {
+        //     if (i < cardWork.length) {
+        //         cardWork[i].style.animation = "txtSlideDown 1s forwards";
+        //         i++;
+        //         console.log("aaaa");
+        //     }
+        // }, 250);
+    }
+
+    // Page contact
+    if (fDefileDocElm == fHauteurSection * 3) {
+        sectContactLine.animation = "txtSlideDown 1s forwards";
+        sectContactTitle.animation = "txtSlideDown 1s forwards";
+    }
+
+}

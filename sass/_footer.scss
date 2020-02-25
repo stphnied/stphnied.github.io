@@ -1,5 +1,5 @@
 .menuFooter {
-    @include pos(fixed,auto,1rem,auto,1.25rem);
+    // @include pos(fixed,auto,1rem,auto,1.25rem);
     display: inline-block;
     max-width: none;
     z-index: 100;
@@ -26,6 +26,10 @@
              opacity: 1;
              top: 0px;
          }
+    }
+    
+    @include desktop  {
+        @include pos(fixed, auto, 1rem, auto, 1.25rem);
     }
 }
 

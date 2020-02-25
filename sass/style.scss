@@ -6,7 +6,7 @@ Description : Portfolio web
 /* --- INDEX des fichiers SCSS --- */
 /* ------------ # Variables ------------ */
 @import "_variables.scss";
-/* ------------ # Variables ------------ */
+/* ------------ # Mixins ------------ */
 @import "_mixins.scss";
 /* ----------- # Anim ------------ */
 @import "_anim.scss";
@@ -14,11 +14,11 @@ Description : Portfolio web
 @import "_menu.scss";
 /* ----------- # Layout ------------ */
 @import "_layout.scss";
-/* ----------- # Layout ------------ */
+/* ----------- # Accueil ------------ */
 @import "_accueil.scss";
-/* ------------ # Elements ------------ */
+/* ------------ # About ------------ */
 @import "_about.scss";
-/* ------------ # Elements ------------ */
+/* ------------ # Contact ------------ */
 @import "_contact.scss";
 /* ----------- # Footer ------------ */
 @import "_footer.scss";

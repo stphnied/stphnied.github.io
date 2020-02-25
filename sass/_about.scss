@@ -1,6 +1,7 @@
 // section ABOUT ---------------------------------------------------------------------------------------------------------------------------ABOUT
 #sectionAbout {
     h1 {
+        text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
         // display: none;
     }
 
@@ -9,6 +10,8 @@
         height: 100%;
 
         .aboutMe {
+            // animation: leftSlideIn 1s forwards;
+            opacity: 0;
             height: 45%;
 
             p {
@@ -51,13 +54,18 @@
         }
         // .aboutMe END
 
+
         .skills {
+            opacity: 0;
+            // animation : rightSlideIn 1s forwards;
+            width: 100%;
             height: 50%;
+            opacity: 0;
 
             // Design part
             #skillDesign {
                 svg {
-                    height: 90px;
+                    height: 75px;
                 }
             }
 
@@ -81,6 +89,7 @@
                             font-size: 0.75rem;
                             font-family: Azonix;
                             font-weight: 100;
+                            text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
                         }
 
                         .skill1,
@@ -103,15 +112,36 @@
         }
         // .skills END
 
-        // SUR DESKTOP
-        @include desktop {
-            flex-direction: row;
-
-            .aboutMe {
-                height: 50%;
-            }
-        }
     }
+        // version DESKTOP
+        @include desktop {
+            .container {
+            @include flex(row, space-around, center);
+
+            // about me
+                .aboutMe {
+                    height: 50%;
+
+                    p {}
+
+                    ul {
+                        li {}
+
+                        a {}
+                    }
+                }
+
+                // Skills
+                .skills {
+                    width: unset;
+
+                     #skillDesign {
+                         svg {height: 90px;}
+                     }
+                }
+            }
+
+        }
 }
 
 // section WORK --------------------------------------------------------------------------------------------------------------------------- WORK

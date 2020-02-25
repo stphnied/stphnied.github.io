@@ -53,10 +53,25 @@
 @keyframes leftSlideIn {
     from {
         transform: translate3d(-400px, 0, 0);
+        opacity: 0;
     }
 
     to {
         transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+// Animation slide-in droite
+@keyframes rightSlideIn {
+    from {
+        transform: translate3d(400px, 0, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
 }
 
@@ -77,9 +92,11 @@
 @keyframes txtSlideDown {
     from {
         transform: translate3d(0, -300px, -400px);
+        opacity: 0;
     }
 
     to {
+        opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }

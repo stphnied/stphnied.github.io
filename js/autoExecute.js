@@ -19,6 +19,7 @@
             var sect = d.querySelectorAll("section");
             var titreSect = [" ", "About", "Work", "Contact"];
 
+
             // Homepage
             if (window.scrollY === (sect[0].offsetTop)) {
                 sectionName.innerHTML = titreSect[0];
@@ -43,4 +44,6 @@
             }
         });
 
+            // Comportements liés au défilement à travers le site
+            window.addEventListener("scroll", appearScrollAnim);
 })();

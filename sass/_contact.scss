@@ -1,78 +1,30 @@
 //  CONTACT---------------------------------------------------------------------------------------------------------------------------
 #sectionContact {
-
+    margin: 0;
     .container {
+        
         padding-left: 6rem;
     }
 
     display: flex;
     align-items: center;
-    margin: 0 10.5rem;
 
-    .verticalLine {
+    .verticalLine2 {
+        opacity: 0;
         @include taille(200px, 2px);
+        // animation: txtSlideDown 1s forwards;
         background: $color_white;
     }
 
-    h1 {
+    .contactTitre {
+        // animation: txtSlideDown 1s forwards;
+        opacity: 0;
+        // animation-delay: .5s;
         font-family: Elianto;
+    }
+
+    @include desktop {
+    margin: 0 10.5rem;
     }
 }
 
-// Background Shape
-.shapes {
-    position: fixed;
-    z-index: -20;
-}
-
-.square {
-    @include taille(20px, 20px);
-    @include pos(fixed, 11rem, auto, 0, 725px);
-    opacity: 0.15;
-    background-color: transparent;
-    border: 4px solid $color_cyan;
-}
-
-.square1 {
-    @include taille(20px, 20px);
-    @include pos(fixed, 700px, auto, 0, 1500px);
-    opacity: 0.15;
-    background-color: transparent;
-    border: 4px solid $color_cyan;
-}
-
-.square2 {
-    @include taille(5px, 5px);
-    @include pos(fixed, 23rem, auto, 0, 80px);
-    opacity: 0.15;
-    background-color: transparent;
-    border: 3px solid $color_cyan;
-}
-
-.circle {
-    @include taille(20px, 20px);
-    // change position
-    @include pos(fixed, 600px, auto, auto, 700px);
-    opacity: 0.15;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 4px solid $color_yellow;
-}
-
-.circle2 {
-    @include taille(5px, 5px);
-    // change position
-    @include pos(fixed, 100px, auto, auto, 1050px);
-    opacity: 0.15;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 3px solid $color_yellow;
-}
-
-.float {
-    animation: floating 6s infinite ease-in-out;
-}
-
-.spin {
-    animation: spinning 10s infinite ease-in-out;
-}

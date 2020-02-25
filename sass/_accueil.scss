@@ -8,6 +8,12 @@
         //  clip-path: circle();
          filter: drop-shadow( 9px -30px 0 $color_yellow);
          opacity: 0.4;
+
+         &:hover {
+             transition: all 0.2s ease-in-out;
+            //  transform: translate3d(22px, -62px, -15px);
+             opacity: 0.7;
+         }
         }
     }
 
@@ -18,12 +24,9 @@
         h1 {
             font-size: 2.1rem;
             font-family: Elianto;
+            text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
             transform: translate3d(0, 0, 0);
             animation: leftSlideIn 1s forwards;
-
-            @include desktop {
-                font-size: 2.5rem;
-            }
         }
 
         p {
@@ -46,19 +49,10 @@
                 color: $color_cyan;
                 font-weight: bold;
             }
-
-            @include desktop {
-                font-size: 1rem;
-                margin: 0;
-            }
         }
 
         h2 {
             color: $color_yellow;
-
-            @include desktop {
-                font-size: 2rem;
-            }
         }
 
         // Changement de texte
@@ -73,9 +67,9 @@
                 // position: absolute;
                 top: 0;
                 color: $color_white;
-                animation: open ease-in 1s;
-                animation-delay: 1s;
-                animation-fill-mode: forwards;
+                // animation: open ease-in 1s forwards 1s;
+                // animation-delay: 1s;
+                // animation-fill-mode: forwards;
 
                 >span {
                     display: inline-block;
@@ -111,9 +105,21 @@
                 animation: blink 1.3s infinite linear;
             }
         }
-
-        @include desktop {
+    }
+    // Desktop version
+    @include desktop {
+        div {
             margin: 10rem;
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+                margin: 0;
+            }
         }
     }
 }
@@ -122,9 +128,9 @@
 #sectionBtnDown {
     cursor: pointer;
     position: absolute;
-    padding-left: 10rem;
+    padding-left: 1rem;
     // height: 100%;
-    top: 70%;
+    top: 63%;
 
     .verticalLine {
         @include taille(100px, 2px);
@@ -135,6 +141,13 @@
     p {
         writing-mode: vertical-lr;
         text-orientation: upleft;
+    }
+
+    @include desktop {
+        position: absolute;
+        padding-left: 10rem;
+        // height: 100%;
+        top: 70%;
     }
 
 }
