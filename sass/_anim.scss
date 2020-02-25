@@ -1,6 +1,4 @@
-/*
-Animation header
-*/
+// Animation Header
 @keyframes logoIn {
     0% {
         opacity: 1;
@@ -23,11 +21,36 @@ Animation header
     }
 }
 
+// Animation Shapes
+@keyframes floating {
+    from {
+        transform: translate(0, 0px);
+    }
+
+    65% {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(0, -0px);
+    }
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
+// Animation section accueil
 
 // Animation slide-in gauche
-@keyframes LeftSlideIn {
+@keyframes leftSlideIn {
     from {
         transform: translate3d(-400px, 0, 0);
     }
@@ -77,20 +100,22 @@ Animation header
 }
 
 /* Animation de la flèche de défilement */
-@keyframes animScrollDown {
-    from {
-        filter: drop-shadow(20px 15px rgba(yellow, 0.5));
+// @keyframes animScrollDown {
+//     from {
+//         filter: drop-shadow(20px 15px rgba(yellow, 0.5));
 
-    }
+//     }
 
-    50% {
-        // transform: translateY(10px);
-        filter: drop-shadow(-20px -15px rgba(cyan, 0.5));
+//     50% {
+//         // transform: translateY(10px);
+//         filter: drop-shadow(-20px -15px rgba(cyan, 0.5));
 
-    }
+//     }
 
-    to {
-        filter: drop-shadow(20px 15px rgba(yellow, 0.5));
+//     to {
+//         filter: drop-shadow(20px 15px rgba(yellow, 0.5));
 
-    }
-}
+//     }
+// }
+
+

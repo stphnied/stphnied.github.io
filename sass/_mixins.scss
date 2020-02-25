@@ -1,21 +1,34 @@
-@mixin flex($flexDirect, $alignItems, $justCont) {
-    align-items: $alignItems;
+// Display flex
+@mixin flex($flexDirect, $justCont,$alignItems){
     display: flex;
     flex-direction: $flexDirect;
     justify-content: $justCont;
+    align-items: $alignItems;
 }
 
+// Taille
 @mixin taille($hauteur, $largeur) {
     height: $hauteur;
     width: $largeur;
 }
 
+// Position
+@mixin pos($pos,$top,$bottom,$right,$left) {
+    position: $pos;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+}
+
+// Responsive tablette
 @mixin tablette() {
     @media (min-width: 768px) {
         @content;
     }
 }
 
+// Responsive desktop
 @mixin desktop() {
     @media (min-width: 992px) {
         @content;

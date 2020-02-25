@@ -1,8 +1,6 @@
 // Nav
 #f-menu {
-    position: fixed;
-    right: -80px;
-    bottom: 1rem;
+    @include pos(fixed,auto,1rem,-80px,auto);
     max-width: none;
     padding-top: 50px;
     z-index: 100;
@@ -16,33 +14,32 @@
     .nav {
         // Arrows
         a {
-            text-align: left;
+            @include taille(20px,100px);
             display: block;
+            margin: 1rem 0;
+            position: relative;
+            padding: 0;
+            text-align: left;
             color: $color_yellow;
             text-decoration: none;
-            padding: 0;
-            height: 20px;
-            width: 100px;
             letter-spacing: -1px;
             text-transform: uppercase;
             line-height: 1;
-            margin: 1rem 0;
-            position: relative;
             cursor: pointer;
 
             span.numeroSection {
-                font-family: Azonix;
                 position: absolute;
                 display: block;
+                font-family: Azonix;
                 transition: all 0.4s ease-in-out;
             }
 
             span.nomSection {
-                color: $color_white;
                 position: absolute;
                 display: block;
-                transition: all 0.4s ease-in-out;
+                color: $color_white;
                 font-family: Codec;
+                transition: all 0.4s ease-in-out;
             }
 
              span.blank {

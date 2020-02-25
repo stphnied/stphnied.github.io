@@ -7,9 +7,6 @@ Description : Portfolio web
 /* ------------ # Variables ------------ */
 /* ------------ # Variables ------------ */
 /* ----------- # Anim ------------ */
-/*
-Animation header
-*/
 @-webkit-keyframes logoIn {
   0% {
     opacity: 1;
@@ -55,7 +52,59 @@ Animation header
   }
 }
 
-@-webkit-keyframes LeftSlideIn {
+@-webkit-keyframes floating {
+  from {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+  65% {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+}
+
+@keyframes floating {
+  from {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+  65% {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(0, 0px);
+            transform: translate(0, 0px);
+  }
+}
+
+@-webkit-keyframes spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinning {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes leftSlideIn {
   from {
     -webkit-transform: translate3d(-400px, 0, 0);
             transform: translate3d(-400px, 0, 0);
@@ -66,7 +115,7 @@ Animation header
   }
 }
 
-@keyframes LeftSlideIn {
+@keyframes leftSlideIn {
   from {
     -webkit-transform: translate3d(-400px, 0, 0);
             transform: translate3d(-400px, 0, 0);
@@ -150,40 +199,13 @@ Animation header
 }
 
 /* Animation de la flèche de défilement */
-@-webkit-keyframes animScrollDown {
-  from {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-  50% {
-    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-  }
-  to {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-}
-@keyframes animScrollDown {
-  from {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-  50% {
-    -webkit-filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-            filter: drop-shadow(-20px -15px rgba(0, 255, 255, 0.5));
-  }
-  to {
-    -webkit-filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-            filter: drop-shadow(20px 15px rgba(255, 255, 0, 0.5));
-  }
-}
-
 /* ------------ # Menu ------------ */
 #f-menu {
   position: fixed;
-  right: -80px;
+  top: auto;
   bottom: 1rem;
+  right: -80px;
+  left: auto;
   max-width: none;
   padding-top: 50px;
   z-index: 100;
@@ -196,36 +218,36 @@ Animation header
 }
 
 #f-menu .nav a {
-  text-align: left;
-  display: block;
-  color: #f4ae34;
-  text-decoration: none;
-  padding: 0;
   height: 20px;
   width: 100px;
+  display: block;
+  margin: 1rem 0;
+  position: relative;
+  padding: 0;
+  text-align: left;
+  color: #f4ae34;
+  text-decoration: none;
   letter-spacing: -1px;
   text-transform: uppercase;
   line-height: 1;
-  margin: 1rem 0;
-  position: relative;
   cursor: pointer;
 }
 
 #f-menu .nav a span.numeroSection {
-  font-family: Azonix;
   position: absolute;
   display: block;
+  font-family: Azonix;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
 #f-menu .nav a span.nomSection {
-  color: #f1f1f1;
   position: absolute;
   display: block;
+  color: #f1f1f1;
+  font-family: Codec;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  font-family: Codec;
 }
 
 #f-menu .nav a span.blank {
@@ -274,14 +296,15 @@ html {
   font-family: Codec, 'sans-serif';
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 100;
   text-transform: uppercase;
 }
 
 body {
-  width: 100%;
   height: 100%;
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #161515;
@@ -308,6 +331,8 @@ section {
 }
 
 header {
+  height: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -315,10 +340,17 @@ header {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  width: 100%;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
   position: fixed;
-  right: 0;
   top: 2rem;
+  bottom: auto;
+  right: 0;
+  left: auto;
 }
 
 header svg {
@@ -341,32 +373,50 @@ header svg:active {
 }
 
 header #sectionName {
+  cursor: context-menu;
   font-family: Elianto;
   font-size: 1.5rem;
   opacity: 0.3;
 }
 
 header hr {
+  height: 60px;
+  width: 1px;
   opacity: 0.5;
   right: 0;
-  width: 1px;
-  height: 60px;
   background-color: white;
-  margin: 0;
   margin: 0 20px;
 }
 
+/* ----------- # Layout ------------ */
 #sectionAccueil {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
+}
+
+#sectionAccueil #imageBackground {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: 0;
+  left: auto;
+}
+
+#sectionAccueil #imageBackground svg {
+  -webkit-filter: drop-shadow(9px -30px 0 #f4ae34);
+          filter: drop-shadow(9px -30px 0 #f4ae34);
+  opacity: 0.4;
 }
 
 #sectionAccueil div {
@@ -379,8 +429,8 @@ header hr {
   font-family: Elianto;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-animation: LeftSlideIn 1s forwards;
-          animation: LeftSlideIn 1s forwards;
+  -webkit-animation: leftSlideIn 1s forwards;
+          animation: leftSlideIn 1s forwards;
 }
 
 @media (min-width: 992px) {
@@ -430,13 +480,26 @@ header hr {
 }
 
 #sectionAccueil div .textChanger {
-  width: 100%;
   height: auto;
+  width: 100%;
   overflow: hidden;
   margin: 0;
 }
 
 #sectionAccueil div .textChanger > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: auto;
+          flex-direction: auto;
+  -webkit-box-pack: auto;
+      -ms-flex-pack: auto;
+          justify-content: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 0;
   color: #f1f1f1;
   -webkit-animation: open ease-in 1s;
@@ -445,12 +508,6 @@ header hr {
           animation-delay: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #sectionAccueil div .textChanger > div > span {
@@ -490,31 +547,6 @@ header hr {
   }
 }
 
-#sectionAccueil #imageBackground {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  #sectionAccueil #imageBackground {
-    display: block;
-    position: absolute;
-    left: 45%;
-    opacity: 0.5;
-    height: 60%;
-    width: 50%;
-    background-image: url("../media/yep.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    -webkit-filter: invert(0.2);
-            filter: invert(0.2);
-  }
-  #sectionAccueil #imageBackground:hover {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    opacity: 1;
-  }
-}
-
 #sectionBtnDown {
   cursor: pointer;
   position: absolute;
@@ -523,8 +555,8 @@ header hr {
 }
 
 #sectionBtnDown .verticalLine {
-  width: 2px;
   height: 100px;
+  width: 2px;
   background: #f1f1f1;
   margin: 10px auto;
 }
@@ -536,24 +568,21 @@ header hr {
   text-orientation: upleft;
 }
 
-#sectionAbout h1 {
-  display: none;
-}
-
+/* ------------ # Elements ------------ */
 #sectionAbout .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
 #sectionAbout .container .aboutMe {
@@ -589,12 +618,11 @@ header hr {
 }
 
 #sectionAbout .container .aboutMe hr {
-  margin: 21px 0;
-  margin-right: 100%;
-  opacity: 0.2;
-  background-color: #885907;
   height: 5px;
   width: 60px;
+  margin: 25px 0 25px 0;
+  opacity: 0.2;
+  background-color: #885907;
   border: 0;
 }
 
@@ -629,18 +657,24 @@ header hr {
 }
 
 #sectionAbout .container .skills #skillProg .skill-list .skill h3 {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   font-family: Azonix;
   font-weight: 100;
 }
 
-#sectionAbout .container .skills #skillProg .skill-list .skill .skill1, #sectionAbout .container .skills #skillProg .skill-list .skill .skill2, #sectionAbout .container .skills #skillProg .skill-list .skill .skill3, #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 {
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill1,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill2,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill3,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill4 {
   height: 15px;
   width: 100px;
   background-color: #252525;
 }
 
-#sectionAbout .container .skills #skillProg .skill-list .skill .skill1 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill2 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill3 > *, #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 > * {
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill1 > *,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill2 > *,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill3 > *,
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill4 > * {
   height: inherit;
   width: 50px;
   background: rgba(0, 255, 255, 0.5);
@@ -662,6 +696,10 @@ header hr {
   display: block;
 }
 
+#sectionWork .container {
+  height: 100%;
+}
+
 #sectionWork .workDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -673,35 +711,35 @@ header hr {
 }
 
 #sectionWork .workDiv .cardWork {
+  height: 300px;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  background: pink;
-  width: 250px;
-  height: 250px;
+  opacity: 0.5;
   margin: 0 auto;
-  -webkit-transform: rotateX(0) rotateY(0);
-          transform: rotateX(0) rotateY(0);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  -webkit-transform: perspective(0) rotateY(0deg) scale(1);
+          transform: perspective(0) rotateY(0deg) scale(1);
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
-  -webkit-transform: perspective(600px) rotateY(-5deg);
-          transform: perspective(600px) rotateY(-5deg);
 }
 
 #sectionWork .workDiv .cardWork:hover {
-  -webkit-transform: perspective(0) rotateY(0deg);
-          transform: perspective(0) rotateY(0deg);
+  -webkit-transform: scale(1.25) perspective(600px) rotateY(-10deg);
+          transform: scale(1.25) perspective(600px) rotateY(-10deg);
+  opacity: 1;
+  z-index: 99;
 }
 
 #sectionWork .workDiv .cardOverlay {
-  position: absolute;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  position: absolute;
   overflow: hidden;
 }
 
@@ -711,9 +749,10 @@ header hr {
 
 #sectionWork .workDiv .cardTitle {
   position: absolute;
-  bottom: -35px;
-  right: -20px;
-  width: 100%;
+  top: auto;
+  bottom: -75px;
+  right: auto;
+  left: -20px;
 }
 
 #sectionWork .workDiv .cardTitle h2 {
@@ -721,118 +760,10 @@ header hr {
   text-align: right;
   -webkit-transform: translateZ(20px);
           transform: translateZ(20px);
-  text-shadow: 5px 5px black;
+  text-shadow: 5px -3px 1px rgba(0, 0, 0, 0.5);
 }
 
-.shapes {
-  position: fixed;
-}
-
-.square {
-  position: fixed;
-  top: 200px;
-  left: 800px;
-  width: 20px;
-  height: 20px;
-  opacity: 0.15;
-  background-color: transparent;
-  border: 3px solid rgba(0, 255, 255, 0.5);
-}
-
-.square1 {
-  position: fixed;
-  top: 700px;
-  left: 1600px;
-  width: 20px;
-  height: 20px;
-  opacity: 0.15;
-  background-color: transparent;
-  border: 2px solid rgba(0, 255, 255, 0.5);
-}
-
-.circle {
-  position: fixed;
-  opacity: 0.15;
-  top: 600px;
-  left: 700px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid #f4ae34;
-}
-
-.circle2 {
-  position: fixed;
-  opacity: 0.15;
-  top: 100px;
-  left: 1400px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 2px solid #f4ae34;
-}
-
-.float {
-  -webkit-animation-name: Floating;
-          animation-name: Floating;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Floating {
-  from {
-    -webkit-transform: translate(0, 0px);
-            transform: translate(0, 0px);
-  }
-  65% {
-    -webkit-transform: translate(0, 50px);
-            transform: translate(0, 50px);
-  }
-  to {
-    -webkit-transform: translate(0, 0px);
-            transform: translate(0, 0px);
-  }
-}
-
-.spin {
-  -webkit-animation-name: Spinning;
-          animation-name: Spinning;
-  -webkit-animation-duration: 12s;
-          animation-duration: 12s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-}
-
-@-webkit-keyframes Spinning {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes Spinning {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
+/* ------------ # Elements ------------ */
 #sectionContact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -843,9 +774,13 @@ header hr {
   margin: 0 10.5rem;
 }
 
+#sectionContact .container {
+  padding-left: 6rem;
+}
+
 #sectionContact .verticalLine {
-  width: 2px;
   height: 200px;
+  width: 2px;
   background: #f1f1f1;
 }
 
@@ -853,14 +788,98 @@ header hr {
   font-family: Elianto;
 }
 
+.shapes {
+  position: fixed;
+  z-index: -20;
+}
+
+.square {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  top: 11rem;
+  bottom: auto;
+  right: 0;
+  left: 725px;
+  opacity: 0.15;
+  background-color: transparent;
+  border: 4px solid rgba(0, 255, 255, 0.5);
+}
+
+.square1 {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  top: 700px;
+  bottom: auto;
+  right: 0;
+  left: 1500px;
+  opacity: 0.15;
+  background-color: transparent;
+  border: 4px solid rgba(0, 255, 255, 0.5);
+}
+
+.square2 {
+  height: 5px;
+  width: 5px;
+  position: fixed;
+  top: 23rem;
+  bottom: auto;
+  right: 0;
+  left: 80px;
+  opacity: 0.15;
+  background-color: transparent;
+  border: 3px solid rgba(0, 255, 255, 0.5);
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  top: 600px;
+  bottom: auto;
+  right: auto;
+  left: 700px;
+  opacity: 0.15;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 4px solid #f4ae34;
+}
+
+.circle2 {
+  height: 5px;
+  width: 5px;
+  position: fixed;
+  top: 100px;
+  bottom: auto;
+  right: auto;
+  left: 1050px;
+  opacity: 0.15;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid #f4ae34;
+}
+
+.float {
+  -webkit-animation: floating 6s infinite ease-in-out;
+          animation: floating 6s infinite ease-in-out;
+}
+
+.spin {
+  -webkit-animation: spinning 10s infinite ease-in-out;
+          animation: spinning 10s infinite ease-in-out;
+}
+
 /* ----------- # Footer ------------ */
 .menuFooter {
+  position: fixed;
+  top: auto;
+  bottom: 1rem;
+  right: auto;
+  left: 1.25rem;
   display: inline-block;
   max-width: none;
-  position: fixed;
   z-index: 100;
-  bottom: 1rem;
-  left: 1.25rem;
   padding-top: 50px;
   text-transform: uppercase;
   color: #f1f1f1;
@@ -900,19 +919,18 @@ header hr {
 .divider {
   display: inline-block;
   width: 80px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: auto 15px;
   vertical-align: middle;
   cursor: pointer;
   position: relative;
 }
 
 .divider:before {
+  height: 1px;
+  width: 0%;
   content: "";
   position: absolute;
   border-bottom: 1px solid #f4ae34;
-  height: 1px;
-  width: 0%;
   -webkit-transition: width 0.25s ease;
   transition: width 0.25s ease;
   -webkit-transition-delay: 0.7s;

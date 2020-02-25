@@ -1,0 +1,175 @@
+// section ABOUT ---------------------------------------------------------------------------------------------------------------------------ABOUT
+#sectionAbout {
+    h1 {
+        // display: none;
+    }
+
+    .container {
+        @include flex(column, space-around, center);
+        height: 100%;
+
+        .aboutMe {
+            height: 45%;
+
+            p {
+                width: 400px;
+                word-spacing: 0.2rem;
+            }
+
+            ul {
+                display: flex;
+                margin: 0;
+                padding-left: 10px;
+
+                li {
+                    list-style-type: none;
+                    margin-right: 10px;
+                    font-size: 1.5rem;
+                }
+
+                a {
+                    color: $color_yellow;
+                    opacity: 0.5;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            hr {
+                @include taille(5px, 60px);
+                margin: 25px 0 25px 0;
+                opacity: 0.2;
+                background-color: darken($color_yellow, 30%);
+                border: 0;
+            }
+
+            .yellow {
+                color: $color_yellow;
+            }
+        }
+        // .aboutMe END
+
+        .skills {
+            height: 50%;
+
+            // Design part
+            #skillDesign {
+                svg {
+                    height: 90px;
+                }
+            }
+
+            // Prog part
+            #skillProg {
+                margin-top: 5rem;
+
+                // ul
+                .skill-list {
+                    display: flex;
+                    margin: 0;
+                    padding-left: 10px;
+
+                    // li
+                    .skill {
+                        list-style-type: none;
+                        margin-right: 10px;
+                        font-size: 0.75rem;
+
+                        h3 {
+                            font-size: 0.75rem;
+                            font-family: Azonix;
+                            font-weight: 100;
+                        }
+
+                        .skill1,
+                        .skill2,
+                        .skill3,
+                        .skill4 {
+                            @include taille(15px, 100px);
+                            background-color: darken($color_white, 80%);
+
+                            &>* {
+                                @include taille(inherit, 50px);
+                                background: $color_cyan;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+        // .skills END
+
+        // SUR DESKTOP
+        @include desktop {
+            flex-direction: row;
+
+            .aboutMe {
+                height: 50%;
+            }
+        }
+    }
+}
+
+// section WORK --------------------------------------------------------------------------------------------------------------------------- WORK
+#sectionWork {
+    display: block;
+
+    .container {
+        height: 100%;
+    }
+
+    .workDiv {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .cardWork {
+            @include taille(300px, 300px);
+            display: flex;
+            position: relative;
+            opacity: 0.5;
+            // background: pink;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: perspective(0) rotateY(0deg) scale(1);
+            transition-duration: 0.2s;
+            transition-timing-function: ease;
+
+            &:hover {
+                transform: scale(1.25) perspective(600px) rotateY(-10deg);
+                opacity: 1;
+                z-index: 99;
+            }
+
+        }
+
+        .cardOverlay {
+            @include taille(100%, 100%);
+            position: absolute;
+            overflow: hidden;
+
+            // background: lightblue;
+            img {
+                height: 100%;
+            }
+        }
+
+        .cardTitle {
+            // display: none;
+            @include pos(absolute, auto, -75px, auto, -20px);
+
+            //width:100%;
+            h2 {
+                // font-size: 1.25rem;
+                font-family: Azonix;
+                text-align: right;
+                transform: translateZ(20px);
+                text-shadow: 5px -3px 1px darken($color_cyan,50%);
+            }
+        }
+    }
+}
