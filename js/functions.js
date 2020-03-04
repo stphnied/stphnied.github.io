@@ -7,10 +7,11 @@ var d = document;
  *@param 
  *@return
  */
-var aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0", "\xa0UI\xa0designer\xa0"];
-var textBox = d.getElementById('textDesigner');
-var cursor = d.createElement('span');
-var letters = [];
+const 
+    aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0", "\xa0UI\xa0designer\xa0"],
+    textBox = d.getElementById('textDesigner'),
+    cursor = d.createElement('span'),
+    letters = [];
 
 function writeTexte(i, j, arr) {
     var aPos = arr[i];
@@ -73,18 +74,15 @@ setTimeout(function () {
  * @return aucun
  */
 function appearScrollAnim() {
-    var fHauteurSection = window.innerHeight;
-    var fDefileDocElm = d.documentElement.scrollTop;
-    // var oOrdi = window.matchMedia("(min-width: 1024px)");
-    // var oMobile = window.matchMedia("(max-width: 767px");
-    // var oActivites = d.getElementsByClassName("sousActivites");
 
-    var sectAboutMe = d.querySelector(".aboutMe").style;
-    var sectSkills = d.querySelector(".skills").style;
-    var sectContactLine = d.querySelector(".verticalLine2").style;
-    var sectContactTitle = d.querySelector(".contactTitre").style
-    var sectMenu = d.querySelector("#f-menu").style;
-    var sectLiens = d.querySelector(".titleFooter").style;
+    const 
+        fHauteurSection = window.innerHeight,
+        fDefileDocElm = d.documentElement.scrollTop,
+        sectAboutMe = d.querySelector(".aboutMe").style,
+        sectSkills = d.querySelector(".skills").style,
+        sectContactTitle = d.querySelector(".contactTitre").style,
+        sectMenu = d.querySelector("#f-menu").style,
+        sectLiens = d.querySelector(".titleFooter").style;
 
 
     //Page About
@@ -126,7 +124,6 @@ function appearScrollAnim() {
 
     // Page contact
     if (fDefileDocElm >= fHauteurSection * 3) {
-        sectContactLine.animation = "txtSlideDown 1s forwards";
         sectContactTitle.animation = "txtSlideDown 1s forwards";
     }
 

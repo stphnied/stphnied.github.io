@@ -3,9 +3,6 @@
  * Fonctions exécutée lors du chargement de la page
  *
  */
-
- var d = document;
-
 (function(){ //IIFE
 
  //Scroll down btn qui mene vers la prochaine section
@@ -16,8 +13,9 @@
 
  // Change page title 
  window.addEventListener("scroll", function () {
-     var sect = d.querySelectorAll("section");
-     var titreSect = [" ", "About", "Work", "Contact"];
+     const 
+        sect = d.querySelectorAll("section"),
+        titreSect = [" ", "About", "Work", "Contact"];
 
 
      // Homepage

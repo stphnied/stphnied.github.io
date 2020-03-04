@@ -2,21 +2,30 @@
 #sectionAccueil {
     @include flex(column, center, auto);
 
+    // Media background
     #imageBackground {
-        @include pos(absolute, 0, auto, 0, auto);
-        svg {
-        //  clip-path: circle();
-         filter: drop-shadow( 9px -30px 0 $color_yellow);
-         opacity: 0.9;
+        @include pos(absolute, 0, auto, -75px, auto);
+        @include flex(auto,center,flex-end);
+        // display: flex;
+        // justify-content: center;
+        // align-items: flex-end;
+        clip-path: circle(33%);
 
-        //  &:hover {
-        //      transition: all 0.2s ease-in-out;
-        //     //  transform: translate3d(22px, -62px, -15px);
-        //      opacity: 0.7;
-        //  }
+        // Image minime
+        img {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 2;
+            animation: txtAppears 1s ease-in;
+        }
+        // Background texture
+        svg {
+            filter: drop-shadow( 9px -30px 0 $color_yellow);
+            opacity: 0.3;
         }
     }
 
+    // Container contenu textuel
     div {
         padding-bottom: 2rem;
         margin-left: 2rem;

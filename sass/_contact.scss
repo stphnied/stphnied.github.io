@@ -2,19 +2,18 @@
 #sectionContact {
     margin: 0;
     .container {
-        
         padding-left: 6rem;
     }
 
     display: flex;
     align-items: center;
 
-    .verticalLine2 {
-        opacity: 0;
-        @include taille(200px, 2px);
-        // animation: txtSlideDown 1s forwards;
-        background: $color_white;
-    }
+    // .verticalLine2 {
+    //     opacity: 0;
+    //     @include taille(200px, 2px);
+    //     // animation: txtSlideDown 1s forwards;
+    //     background: $color_white;
+    // }
 
     .contactTitre {
         // animation: txtSlideDown 1s forwards;

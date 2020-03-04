@@ -2,13 +2,13 @@
 #sectionAbout {
     h1 {
         text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
-        // display: none;
     }
 
     .container {
         @include flex(column, space-around, center);
         height: 100%;
 
+        // Section description
         .aboutMe {
             // animation: leftSlideIn 1s forwards;
             opacity: 0;
@@ -54,7 +54,7 @@
         }
         // .aboutMe END
 
-
+        // Section skills
         .skills {
             opacity: 0;
             // animation : rightSlideIn 1s forwards;
