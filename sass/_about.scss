@@ -145,61 +145,61 @@
 }
 
 // section WORK --------------------------------------------------------------------------------------------------------------------------- WORK
-#sectionWork {
-    display: block;
+// #sectionWork {
+//     display: block;
 
-    .container {
-        height: 100%;
-    }
+//     .container {
+//         height: 100%;
+//     }
 
-    .workDiv {
-        display: flex;
-        align-items: center;
-        height: 100%;
+//     .workDiv {
+//         display: flex;
+//         align-items: center;
+//         height: 100%;
 
-        .cardWork {
-            @include taille(300px, 300px);
-            display: flex;
-            position: relative;
-            opacity: 0.5;
-            // background: pink;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            transform: perspective(0) rotateY(0deg) scale(1);
-            transition-duration: 0.2s;
-            transition-timing-function: ease;
+//         .cardWork {
+//             @include taille(300px, 300px);
+//             display: flex;
+//             position: relative;
+//             opacity: 0.5;
+//             // background: pink;
+//             margin: 0 auto;
+//             transform-style: preserve-3d;
+//             transform: perspective(0) rotateY(0deg) scale(1);
+//             transition-duration: 0.2s;
+//             transition-timing-function: ease;
 
-            &:hover {
-                transform: scale(1.25) perspective(600px) rotateY(-10deg);
-                opacity: 1;
-                z-index: 99;
-            }
+//             &:hover {
+//                 transform: scale(1.25) perspective(600px) rotateY(-10deg);
+//                 opacity: 1;
+//                 z-index: 99;
+//             }
 
-        }
+//         }
 
-        .cardOverlay {
-            @include taille(100%, 100%);
-            position: absolute;
-            overflow: hidden;
+//         .cardOverlay {
+//             @include taille(100%, 100%);
+//             position: absolute;
+//             overflow: hidden;
 
-            // background: lightblue;
-            img {
-                height: 100%;
-            }
-        }
+//             // background: lightblue;
+//             img {
+//                 height: 100%;
+//             }
+//         }
 
-        .cardTitle {
-            // display: none;
-            @include pos(absolute, auto, -75px, auto, -20px);
+//         .cardTitle {
+//             // display: none;
+//             @include pos(absolute, auto, -75px, auto, -20px);
 
-            //width:100%;
-            h2 {
-                // font-size: 1.25rem;
-                font-family: Azonix;
-                text-align: right;
-                transform: translateZ(20px);
-                text-shadow: 5px -3px 1px darken($color_cyan,50%);
-            }
-        }
-    }
-}
+//             //width:100%;
+//             h2 {
+//                 // font-size: 1.25rem;
+//                 font-family: Azonix;
+//                 text-align: right;
+//                 transform: translateZ(20px);
+//                 text-shadow: 5px -3px 1px darken($color_cyan,50%);
+//             }
+//         }
+//     }
+// }

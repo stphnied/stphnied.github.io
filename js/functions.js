@@ -7,7 +7,7 @@ var d = document;
  *@param 
  *@return
  */
-var aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0","\xa0UI\xa0designer\xa0"];
+var aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0", "\xa0UI\xa0designer\xa0"];
 var textBox = d.getElementById('textDesigner');
 var cursor = d.createElement('span');
 var letters = [];
@@ -83,17 +83,28 @@ function appearScrollAnim() {
     var sectSkills = d.querySelector(".skills").style;
     var sectContactLine = d.querySelector(".verticalLine2").style;
     var sectContactTitle = d.querySelector(".contactTitre").style
+    var sectMenu = d.querySelector("#f-menu").style;
+    var sectLiens = d.querySelector(".titleFooter").style;
 
 
     //Page About
 
     if (fDefileDocElm <= fHauteurSection) {
-
+    // Cacher le menu et les liens sociaux au debut
+    // sectMenu.opacity = "0";
+    sectLiens.opacity = "0";
+    // sectMenu.removeProperty("animation");
+    sectLiens.removeProperty("animation");
     }
 
     if (fDefileDocElm == fHauteurSection) {
+        // Cotenu a propos
         sectAboutMe.animation = "leftSlideIn 1s forwards";
         sectSkills.animation = "rightSlideIn 1s forwards 0.5s";
+
+        // Menu et liens sociaux
+        // sectMenu.animation = "rightSlideIn 0.5s forwards";
+        sectLiens.animation = "leftSlideIn 1s forwards";
     }
     // Remove anim
     if (fDefileDocElm >= fHauteurSection * 2) {
@@ -114,7 +125,7 @@ function appearScrollAnim() {
     }
 
     // Page contact
-    if (fDefileDocElm == fHauteurSection * 3) {
+    if (fDefileDocElm >= fHauteurSection * 3) {
         sectContactLine.animation = "txtSlideDown 1s forwards";
         sectContactTitle.animation = "txtSlideDown 1s forwards";
     }
