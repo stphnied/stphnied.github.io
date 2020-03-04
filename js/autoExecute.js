@@ -16,8 +16,6 @@
      const 
         sect = d.querySelectorAll("section"),
         titreSect = [" ", "About", "Work", "Contact"];
-
-
      // Homepage
      if (window.scrollY === (sect[0].offsetTop)) {
          sectionName.innerHTML = titreSect[0];
@@ -44,5 +42,12 @@
 
     // Comportements liés au défilement à travers le site
      window.addEventListener("scroll", appearScrollAnim);
+    
+    //Toggle mobile menu button
+    d.querySelector("#mobileMenu").addEventListener("click", function () {
+        const btnMenu = d.querySelector(".btnMenu");
+        btnMenu.classList.toggle('active');
+        });
 
 })();
+

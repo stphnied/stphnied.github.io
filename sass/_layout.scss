@@ -32,6 +32,10 @@ h2 {
     text-transform: uppercase;
 }
 
+ul {
+    list-style-type:none;
+}
+
 body {
     @include taille(100%, 100%);
     box-sizing: border-box;

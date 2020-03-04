@@ -234,7 +234,133 @@ Description : Portfolio web
 
 /* Animation de la flèche de défilement */
 /* ------------ # Menu ------------ */
+#mobileMenu {
+  display: block;
+  z-index: 100;
+  position: fixed;
+}
+
+@media (min-width: 992px) {
+  #mobileMenu {
+    display: none;
+  }
+}
+
+.btnMenu {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+.btnMenu .floating-btn {
+  display: block;
+  width: 3.5em;
+  height: 3.5em;
+  /*   border-radius: 50%; */
+  background-color: #a06909;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  color: white;
+  text-align: center;
+  line-height: 3.9;
+  cursor: pointer;
+  outline: 0;
+}
+
+.btnMenu .floating-btn i {
+  font-size: 1em;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.btnMenu:after {
+  display: block;
+  content: ' ';
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -2;
+  background-color: #a06909;
+  opacity: 0.5;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.btnMenu .items-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.btnMenu .menu-item {
+  opacity: 0;
+  position: fixed;
+  top: .2em;
+  right: .2em;
+  z-index: -1;
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3;
+  -webkit-transition: background .2s ease, -webkit-transform .3s ease;
+  transition: background .2s ease, -webkit-transform .3s ease;
+  transition: transform .3s ease, background .2s ease;
+  transition: transform .3s ease, background .2s ease, -webkit-transform .3s ease;
+}
+
+.btnMenu .menu-item:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.btnMenu.active .floating-btn i {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.btnMenu.active:after {
+  -webkit-transform: scale3d(2.5, 2.5, 1);
+          transform: scale3d(2.5, 2.5, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.68, 1.55, 0.265, 1);
+          transition-timing-function: cubic-bezier(0.68, 1.55, 0.265, 1);
+}
+
+.btnMenu.active .menu-item {
+  opacity: 1;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btnMenu.active .menu-item:nth-child(1) {
+  -webkit-transform: translate3d(0, -3.3em, 0);
+          transform: translate3d(0, -3.3em, 0);
+}
+
+.btnMenu.active .menu-item:nth-child(2) {
+  -webkit-transform: translate3d(-1.5em, -3.3em, 0);
+          transform: translate3d(-1.5em, -3.3em, 0);
+}
+
+.btnMenu.active .menu-item:nth-child(3) {
+  -webkit-transform: translate3d(-3.5em, -1em, 0);
+          transform: translate3d(-3.5em, -1em, 0);
+}
+
+.btnMenu.active .menu-item:nth-child(4) {
+  -webkit-transform: translate3d(-3.5em, 0.5em, 0);
+          transform: translate3d(-3.5em, 0.5em, 0);
+}
+
 #f-menu {
+  display: none;
   position: fixed;
   top: auto;
   bottom: 1rem;
@@ -243,6 +369,12 @@ Description : Portfolio web
   max-width: none;
   padding-top: 50px;
   z-index: 100;
+}
+
+@media (min-width: 992px) {
+  #f-menu {
+    display: block;
+  }
 }
 
 #f-menu .nav-wrap {
@@ -339,6 +471,10 @@ h1,
 h2 {
   font-weight: 100;
   text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
 }
 
 body {
@@ -537,40 +673,7 @@ header hr {
 }
 
 #sectionAccueil #imageBackground {
-  position: absolute;
-  top: 0;
-  bottom: auto;
-  right: -75px;
-  left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: auto;
-          flex-direction: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-clip-path: circle(33%);
-          clip-path: circle(33%);
-}
-
-#sectionAccueil #imageBackground img {
-  position: absolute;
-  opacity: 0.7;
-  z-index: 2;
-  -webkit-animation: txtAppears 1s ease-in;
-          animation: txtAppears 1s ease-in;
-}
-
-#sectionAccueil #imageBackground svg {
-  -webkit-filter: drop-shadow(9px -30px 0 #f4ae34);
-          filter: drop-shadow(9px -30px 0 #f4ae34);
-  opacity: 0.3;
+  display: none;
 }
 
 #sectionAccueil div {
@@ -672,6 +775,40 @@ header hr {
 }
 
 @media (min-width: 992px) {
+  #sectionAccueil #imageBackground {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: auto;
+            flex-direction: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    right: -75px;
+    left: auto;
+    -webkit-clip-path: circle(33%);
+            clip-path: circle(33%);
+  }
+  #sectionAccueil #imageBackground img {
+    position: absolute;
+    opacity: 0.7;
+    z-index: 2;
+    -webkit-animation: txtAppears 1s ease-in;
+            animation: txtAppears 1s ease-in;
+  }
+  #sectionAccueil #imageBackground svg {
+    -webkit-filter: drop-shadow(9px -30px 0 #f4ae34);
+            filter: drop-shadow(9px -30px 0 #f4ae34);
+    opacity: 0.3;
+  }
   #sectionAccueil div {
     margin: 10rem;
   }

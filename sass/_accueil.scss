@@ -2,29 +2,10 @@
 #sectionAccueil {
     @include flex(column, center, auto);
 
-    // Media background
+    // Hide bg image
     #imageBackground {
-        @include pos(absolute, 0, auto, -75px, auto);
-        @include flex(auto,center,flex-end);
-        // display: flex;
-        // justify-content: center;
-        // align-items: flex-end;
-        clip-path: circle(33%);
-
-        // Image minime
-        img {
-            position: absolute;
-            opacity: 0.7;
-            z-index: 2;
-            animation: txtAppears 1s ease-in;
-        }
-        // Background texture
-        svg {
-            filter: drop-shadow( 9px -30px 0 $color_yellow);
-            opacity: 0.3;
-        }
+        display: none;
     }
-
     // Container contenu textuel
     div {
         padding-bottom: 2rem;
@@ -117,6 +98,26 @@
     }
     // Desktop version
     @include desktop {
+        // Media background
+        #imageBackground {
+
+            @include flex(auto, center, flex-end);
+            @include pos(absolute, 0, auto, -75px, auto);
+            clip-path: circle(33%);
+            // Image minime
+            img {
+                position: absolute;
+                opacity: 0.7;
+                z-index: 2;
+                animation: txtAppears 1s ease-in;
+            }
+            // Background texture
+            svg {
+                filter: drop-shadow(9px -30px 0 $color_yellow);
+                opacity: 0.3;
+            }
+        }
+
         div {
             margin: 10rem;
             h1 {

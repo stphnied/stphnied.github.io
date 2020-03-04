@@ -1,6 +1,6 @@
 "use strict";
 
-var d = document;
+const d = document;
 
 /**
  *Fonction permettant d'ecrire les mots dans l'array
