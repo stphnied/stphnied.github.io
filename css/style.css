@@ -276,14 +276,16 @@ Description : Portfolio web
 }
 
 .btnMenu:after {
-  display: block;
-  content: ' ';
-  width: 3.5em;
   height: 3.5em;
-  border-radius: 30%;
+  width: 3.5em;
   position: absolute;
   top: 0;
+  bottom: auto;
   right: 0;
+  left: auto;
+  display: block;
+  content: ' ';
+  border-radius: 30%;
   z-index: -2;
   background-color: #a06909;
   opacity: 0.5;
@@ -297,20 +299,22 @@ Description : Portfolio web
 }
 
 .btnMenu .menu-item {
-  opacity: 0;
+  height: 3em;
+  width: 3em;
   position: fixed;
-  top: .2em;
-  right: .2em;
-  z-index: -1;
+  top: 0.2em;
+  bottom: auto;
+  right: 0.2em;
+  left: auto;
   display: block;
   text-decoration: none;
   color: white;
   font-size: 1em;
-  width: 3em;
-  height: 3em;
   border-radius: 50%;
   text-align: center;
   line-height: 3;
+  opacity: 0;
+  z-index: -1;
   -webkit-transition: background .2s ease, -webkit-transform .3s ease;
   transition: background .2s ease, -webkit-transform .3s ease;
   transition: transform .3s ease, background .2s ease;
@@ -471,6 +475,7 @@ h1,
 h2 {
   font-weight: 100;
   text-transform: uppercase;
+  text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
 }
 
 ul {
@@ -549,8 +554,9 @@ header svg:active {
 
 header #sectionName {
   cursor: context-menu;
-  font-family: Elianto;
+  font-family: "Elianto";
   font-size: 1.5rem;
+  font-weight: auto;
   opacity: 0.3;
 }
 
@@ -682,8 +688,9 @@ header hr {
 }
 
 #sectionAccueil div h1 {
+  font-family: "Elianto";
   font-size: 2.1rem;
-  font-family: Elianto;
+  font-weight: auto;
   text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -765,6 +772,10 @@ header hr {
   font-weight: bold;
   -webkit-animation: txtSlideDown 2.3s forwards ease-out;
           animation: txtSlideDown 2.3s forwards ease-out;
+}
+
+#sectionAccueil div #textDesigner h2 {
+  text-shadow: none;
 }
 
 #sectionAccueil div #textDesigner h2:last-child {
@@ -854,10 +865,6 @@ header hr {
 }
 
 /* ------------ # About ------------ */
-#sectionAbout h1 {
-  text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
-}
-
 #sectionAbout .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -875,21 +882,29 @@ header hr {
 }
 
 #sectionAbout .container .aboutMe {
-  opacity: 0;
   height: 45%;
+  opacity: 0;
 }
 
 #sectionAbout .container .aboutMe p {
   width: 400px;
-  word-spacing: 0.2rem;
+  word-spacing: 0.3rem;
+  letter-spacing: 0.01rem;
 }
 
 #sectionAbout .container .aboutMe ul {
+  border-radius: 1px;
+  background: linear-gradient(225deg, #141313, #181616);
+  -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+          box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin: 0;
-  padding-left: 10px;
+  padding: 10px;
 }
 
 #sectionAbout .container .aboutMe ul li {
@@ -921,18 +936,24 @@ header hr {
 }
 
 #sectionAbout .container .skills {
-  opacity: 0;
-  width: 100%;
   height: 50%;
+  width: 100%;
   opacity: 0;
 }
 
 #sectionAbout .container .skills #skillDesign svg {
   height: 75px;
+  -webkit-filter: drop-shadow(1px 1px 0px #111) drop-shadow(-1px 1px 0px #111) drop-shadow(1px -1px 0px #111) drop-shadow(-1px 13px 0px #111);
+          filter: drop-shadow(1px 1px 0px #111) drop-shadow(-1px 1px 0px #111) drop-shadow(1px -1px 0px #111) drop-shadow(-1px 13px 0px #111);
 }
 
 #sectionAbout .container .skills #skillProg {
   margin-top: 5rem;
+  border-radius: 1px;
+  background: linear-gradient(225deg, #141313, #181616);
+  -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+          box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+  padding-bottom: 1.2rem;
 }
 
 #sectionAbout .container .skills #skillProg .skill-list {
@@ -950,8 +971,8 @@ header hr {
 }
 
 #sectionAbout .container .skills #skillProg .skill-list .skill h3 {
+  font-family: "azonix";
   font-size: 0.75rem;
-  font-family: Azonix;
   font-weight: 100;
   text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
 }
@@ -1009,8 +1030,9 @@ header hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1021,7 +1043,6 @@ header hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 70vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 1rem auto;
@@ -1032,44 +1053,206 @@ header hr {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   grid-gap: 0.6rem;
 }
 
-.galleryGrid .galleryItems {
+.galleryGrid h1 {
+  font-family: "azonix";
+  font-size: 3rem;
+  font-weight: auto;
+  text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin: auto;
+  color: #f4ae34;
+}
+
+.workGame {
+  padding: 5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr auto 1fr;
+      grid-template-columns: auto 1fr auto 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "title . ." "title . .";
+}
+
+.workGame .galleryItems {
+  -webkit-filter: brightness(0.75);
+          filter: brightness(0.75);
   height: 250px;
-  max-width: 100%;
   padding: 0.2rem;
 }
 
-.galleryGrid .galleryItems:hover {
+.workGame .galleryItems:hover {
   -webkit-transition: .4s all;
   transition: .4s all;
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   z-index: 99;
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.workGame .galleryItems:hover:nth-of-type(1) {
+  opacity: 0.5;
+  background-image: url("../media/airGif.gif"), url("../media/sd-airBallon.png");
+  background-size: contain;
+  background-blend-mode: color-dodge;
+}
+
+.workGame .galleryItems:hover:nth-of-type(4) {
+  background-image: url("../media/sd-quercus.png"), url("../media/quercusGif.gif");
+  background-size: contain;
+  background-blend-mode: color-dodge;
+}
+
+.workGame .galleryItems:hover:nth-of-type(5) {
+  background-image: url("../media/sd-blok.png"), url("../media/blokGif.gif");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.workGame .galleryItems:hover:nth-of-type(6) {
+  background-image: url("../media/sd-astre.png"), url("../media/astreGif.gif");
+  background-size: contain;
+  background-blend-mode: color-dodge;
+}
+
+.workGame .galleryItems:nth-child(n) {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.workGame .galleryItems:nth-of-type(1) {
+  height: 250px;
+  width: 450px;
+  background-image: url("../media/sd-airBallon.png");
+}
+
+.workGame .galleryItems:nth-of-type(3) {
+  height: 250px;
+  width: 450px;
+  background-image: url("../media/sd-tokki.png");
+}
+
+.workGame .galleryItems:nth-of-type(4) {
+  height: 250px;
+  width: 450px;
+  background-image: url("../media/sd-quercus.png");
+}
+
+.workGame .galleryItems:nth-of-type(5) {
+  width: inherit;
+  background-image: url("../media/sd-blok.png");
+}
+
+.workGame .galleryItems:nth-of-type(6) {
+  height: 250px;
+  width: 450px;
+  background-image: url("../media/sd-astre.png");
+}
+
+.work3D {
+  display: none;
+  -ms-grid-columns: auto 1fr 1fr;
+      grid-template-columns: auto 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "title . ." "title . .";
+  padding: 1rem;
+  margin: 0 1rem 0 1rem;
+  border-radius: 1px;
+  -webkit-box-shadow: -3px 3px 0px #131212, 3px -3px 0px #191818;
+          box-shadow: -3px 3px 0px #131212, 3px -3px 0px #191818;
+}
+
+.work3D .galleryItems {
+  height: 250px;
+  padding: 1rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.title {
+  border-radius: 1px;
+  background: linear-gradient(225deg, #141313, #181616);
+  -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+          box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: title;
+  padding: 1rem;
+  margin: 0 1rem 0 1rem;
+}
+
+.radioContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.radioContainer .radioWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+}
+
+.radioContainer .radioWrapper input {
+  display: none;
+}
+
+.radioContainer .radioWrapper input:checked ~ label {
+  color: #f4ae34;
+}
+
+.radioContainer .radioWrapper label {
+  cursor: pointer;
+}
+
+.radioContainer .radioWrapper > div {
+  border-radius: 1px;
+  background: linear-gradient(225deg, #141313, #181616);
+  -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+          box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+  padding: 1rem;
+  margin: 0 1rem 0 1rem;
 }
 
 .left-fade {
   height: 30rem;
   width: 25%;
+  position: fixed;
+  top: 300px;
+  bottom: auto;
+  right: auto;
+  left: 300px;
   background: linear-gradient(100deg, #161515 0%, rgba(0, 0, 0, 0) 80%);
   pointer-events: none;
-  position: fixed;
-  left: 0;
-  top: 300px;
   z-index: -1;
 }
 
 .right-fade {
   height: 30rem;
   width: 25%;
+  position: fixed;
+  top: 300px;
+  bottom: auto;
+  right: 0;
+  left: auto;
   background: linear-gradient(-100deg, #161515 0%, rgba(0, 0, 0, 0) 80%);
   pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 300px;
   z-index: -1;
 }
 
@@ -1081,13 +1264,13 @@ header hr {
 
 /* ------------ # Contact ------------ */
 #sectionContact {
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0;
 }
 
 #sectionContact .container {
@@ -1109,13 +1292,13 @@ header hr {
 .menuFooter {
   display: inline-block;
   max-width: none;
-  z-index: 100;
   padding-top: 50px;
   text-transform: uppercase;
   color: #f1f1f1;
   opacity: 0.5;
   cursor: pointer;
   pointer-events: none;
+  z-index: 100;
 }
 
 .menuFooter:hover {

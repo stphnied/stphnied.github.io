@@ -49,5 +49,7 @@
         btnMenu.classList.toggle('active');
         });
 
+    // d.querySelectorAll(".galleryItems").addEventListener("mouseover", imgHover);
+
 })();
 

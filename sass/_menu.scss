@@ -36,14 +36,11 @@
     }
 
     &:after {
+        @include taille(3.5em,3.5em);
+        @include pos(absolute,0,auto,0,auto);
         display: block;
         content: ' ';
-        width: 3.5em;
-        height: 3.5em;
         border-radius: 30%;
-        position: absolute;
-        top: 0;
-        right: 0;
         z-index: -2;
         background-color: darken($color_yellow, 25%);
         opacity: 0.5;
@@ -56,20 +53,17 @@
     }
 
     .menu-item {
-        opacity: 0;
-        position: fixed;
-        top: .2em;
-        right: .2em;
-        z-index: -1;
+        @include taille(3em,3em);
+        @include pos(fixed,0.2em,auto,0.2em,auto);
         display: block;
         text-decoration: none;
         color: hsl(0, 0%, 100%);
         font-size: 1em;
-        width: 3em;
-        height: 3em;
         border-radius: 50%;
         text-align: center;
         line-height: 3;
+        opacity: 0;
+        z-index: -1;
         transition: transform .3s ease, background .2s ease;
 
         &:hover {
@@ -115,7 +109,7 @@
 }
 
 
-// Navigation desktop ----------------------------------------------------------------------------------
+// Navigation desktop ----------------------------------------------------------------------------------DESKTOP
 #f-menu {
     // Hide when mobile
     display: none;

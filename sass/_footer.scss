@@ -2,14 +2,13 @@
     // @include pos(fixed,auto,1rem,auto,1.25rem);
     display: inline-block;
     max-width: none;
-    z-index: 100;
     padding-top: 50px;
     text-transform: uppercase;
     color: $color_white;
     opacity: 0.5;
-
     cursor: pointer;
     pointer-events: none;
+    z-index: 100;
     
     &:hover {
         transition: all 0.2s;
@@ -27,7 +26,7 @@
              top: 0px;
          }
     }
-    
+    // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop  {
         @include pos(fixed, auto, 1rem, auto, 1.25rem);
     }

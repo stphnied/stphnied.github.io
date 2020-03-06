@@ -21,6 +21,19 @@
     left: $left;
 }
 
+// Neumorphism box
+@mixin box() {
+    border-radius: 1px;
+    background: linear-gradient(225deg, #141313, #181616);
+    box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+}
+
+@mixin font($fFamily, $fSize, $fWeight) {
+    font-family: $fFamily;
+    font-size: $fSize;
+    font-weight: $fWeight;
+}
+
 // Responsive tablette
 @mixin tablette() {
     @media (min-width: 768px) {

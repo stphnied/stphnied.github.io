@@ -6,14 +6,13 @@
     #imageBackground {
         display: none;
     }
-    // Container contenu textuel
+    // Container
     div {
         padding-bottom: 2rem;
         margin-left: 2rem;
 
         h1 {
-            font-size: 2.1rem;
-            font-family: Elianto;
+            @include font("Elianto", 2.1rem, auto);
             text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
             transform: translate3d(0, 0, 0);
             animation: leftSlideIn 1s forwards;
@@ -28,6 +27,7 @@
             white-space: pre-line;
             animation: txtAppears 1s forwards 2s;
 
+            // Adding {} before and after
             &:before {
                 content: '\007B';
                 color: $color_cyan;
@@ -45,7 +45,7 @@
             color: $color_yellow;
         }
 
-        // Changement de texte
+        // Container for Text design changer 
         .textChanger {
             @include taille(auto, 100%);
             overflow: hidden;
@@ -54,18 +54,14 @@
 
             >div {
                 @include flex(auto, auto, center);
-                // position: absolute;
                 top: 0;
                 color: $color_white;
-                // animation: open ease-in 1s forwards 1s;
-                // animation-delay: 1s;
-                // animation-fill-mode: forwards;
-
                 >span {
                     display: inline-block;
                 }
             }
 
+            // Adding </> to the right
             .right {
                 margin: 0;
                 @include taille(5rem, auto);
@@ -89,18 +85,20 @@
 
         // Texte descriptif changeant
         #textDesigner {
-            h2:last-child {
-                padding-right: 2px;
-                border-right: .05em solid $color_yellow;
-                animation: blink 1.3s infinite linear;
+            h2 {
+                text-shadow: none;
+                &:last-child {
+                    padding-right: 2px;
+                    border-right: .05em solid $color_yellow;
+                    animation: blink 1.3s infinite linear;
+                }
             }
         }
     }
-    // Desktop version
+    // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
         // Media background
         #imageBackground {
-
             @include flex(auto, center, flex-end);
             @include pos(absolute, 0, auto, -75px, auto);
             clip-path: circle(33%);
@@ -152,7 +150,7 @@
         writing-mode: vertical-lr;
         text-orientation: upleft;
     }
-
+    // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
         position: absolute;
         padding-left: 10rem;

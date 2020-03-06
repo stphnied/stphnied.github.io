@@ -8,7 +8,7 @@ const d = document;
  *@return
  */
 const 
-    aJobPosition = ["\xa0Web\xa0designer\xa0", "\xa0Game\xa0designer\xa0", "\xa0Graphic\xa0designer\xa0", "\xa0UI\xa0designer\xa0"],
+    aJobPosition = ["\xa0Web\xa0design\xa0", "\xa0Game\xa0design\xa0", "\xa0Graphic\xa0design\xa0", "\xa0UI\xa0design\xa0"],
     textBox = d.getElementById('textDesigner'),
     cursor = d.createElement('span'),
     letters = [];
@@ -127,4 +127,13 @@ function appearScrollAnim() {
         sectContactTitle.animation = "txtSlideDown 1s forwards";
     }
 
+}
+
+function imgHover() {
+    const 
+        imgWork = d.querySelectorAll("galleryItems");
+
+        
+
+    console.log("hi hi ");
 }
