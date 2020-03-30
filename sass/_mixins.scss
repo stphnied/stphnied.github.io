@@ -28,6 +28,14 @@
     box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
 }
 
+@mixin boxChecked() {
+border-radius: 1px;
+background: #161515;
+box-shadow: 3px -3px 0px #131212,
+-3px 3px 0px #191818;
+}
+
+// Font settings
 @mixin font($fFamily, $fSize, $fWeight) {
     font-family: $fFamily;
     font-size: $fSize;

@@ -20,6 +20,28 @@
         font-family: Elianto;
     }
 
+    .lienContact {
+        display: flex;
+        align-self: start;
+        @include box();
+        padding: 1rem;
+
+        li {
+            margin-right: 2rem;
+
+            a{
+                
+                text-decoration: none;
+                color: $color_white;
+                opacity: 0.8;
+                &:hover {
+                    transition: 0.2 all ;
+                    color: $color_yellow;
+                }
+            }
+        }
+    }
+
     // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
     margin: 0 10.5rem;

@@ -63,9 +63,8 @@
 
             // Adding </> to the right
             .right {
-                margin: 0;
                 @include taille(5rem, auto);
-
+                margin: 0;
                 // text-align: left;
                 #textDesigner {
                     display: flex;
@@ -134,12 +133,12 @@
 
 // Bouton scroll down
 #sectionBtnDown {
+    @include pos(absolute,63%,auto,auto,auto);
     cursor: pointer;
-    position: absolute;
     padding-left: 1rem;
-    // height: 100%;
-    top: 63%;
-
+    opacity: 0;
+    animation: txtSlideDown 1s forwards 1.5s;
+    z-index: 10;
     .verticalLine {
         @include taille(100px, 2px);
         background: $color_white;
@@ -152,12 +151,9 @@
     }
     // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
-        position: absolute;
+        @include pos(absolute, 70%, auto, auto, auto);
         padding-left: 10rem;
-        // height: 100%;
-        top: 70%;
     }
-
 }
 
 // #sectionBtnDown {

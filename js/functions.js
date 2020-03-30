@@ -80,19 +80,20 @@ function appearScrollAnim() {
         fDefileDocElm = d.documentElement.scrollTop,
         sectAboutMe = d.querySelector(".aboutMe").style,
         sectSkills = d.querySelector(".skills").style,
+        sectGame = d.querySelector(".workGame").style,
+        sectMaya = d.querySelector(".workMaya").style,
+        btnWork = d.querySelector(".radioContainer").style,
         sectContactTitle = d.querySelector(".contactTitre").style,
         sectMenu = d.querySelector("#f-menu").style,
         sectLiens = d.querySelector(".titleFooter").style;
 
-
     //Page About
-
     if (fDefileDocElm <= fHauteurSection) {
-    // Cacher le menu et les liens sociaux au debut
-    // sectMenu.opacity = "0";
-    sectLiens.opacity = "0";
-    // sectMenu.removeProperty("animation");
-    sectLiens.removeProperty("animation");
+        // Cacher le menu et les liens sociaux au debut
+        // sectMenu.opacity = "0";
+        // sectMenu.removeProperty("animation");
+        sectLiens.opacity = "0";
+        sectLiens.removeProperty("animation");
     }
 
     if (fDefileDocElm == fHauteurSection) {
@@ -104,22 +105,19 @@ function appearScrollAnim() {
         // sectMenu.animation = "rightSlideIn 0.5s forwards";
         sectLiens.animation = "leftSlideIn 1s forwards";
     }
-    // Remove anim
+
     if (fDefileDocElm >= fHauteurSection * 2) {
-        sectAboutMe.removeProperty("animation");
-        sectSkills.removeProperty("animation");
+        // anim work
+        sectGame.animation = "popUp 1s forwards";
+        sectMaya.animation = "popUp 1s forwards";
+        btnWork.animation = "txtSlideDown 1s forwards 0.5s"
+        
+        // Remove anim about
+        // sectAboutMe.removeProperty("animation");
+        // sectSkills.removeProperty("animation");
     }
 
     if (fDefileDocElm == fHauteurSection * 2) {
-        // var cardWork = d.querySelectorAll(".cardWork");
-        // let i = 0;
-        // setInterval(function () {
-        //     if (i < cardWork.length) {
-        //         cardWork[i].style.animation = "txtSlideDown 1s forwards";
-        //         i++;
-        //         console.log("aaaa");
-        //     }
-        // }, 250);
     }
 
     // Page contact
@@ -129,11 +127,15 @@ function appearScrollAnim() {
 
 }
 
-function imgHover() {
-    const 
-        imgWork = d.querySelectorAll("galleryItems");
+// Fonction permettant d'afficher la galerie d'image correspondante a sa categorie
+function fShowGame() {
+    const gameBtn = d.querySelectorAll('input[name="workCategorie"]')[0];
+        d.querySelector(".workGame").style.display = "grid";
+        d.querySelector(".work3D").style.display = "none";
+}
 
-        
-
-    console.log("hi hi ");
+function fShow3D() {
+    const mayaBtn = d.querySelectorAll('input[name="workCategorie"]')[1];
+    d.querySelector(".workGame").style.display = "none";
+    d.querySelector(".work3D").style.display = "grid";
 }

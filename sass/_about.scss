@@ -23,7 +23,6 @@
                 padding: 10px;
 
                 li {
-                    list-style-type: none;
                     margin-right: 10px;
                     font-size: 1.5rem;
                 }
@@ -64,8 +63,8 @@
 
             // Prog part
             #skillProg {
-                margin-top: 5rem;
                 @include box();
+                margin-top: 5rem;
                 padding-bottom: 1.2rem;
 
                 // ul
@@ -76,7 +75,6 @@
 
                     // li
                     .skill {
-                        list-style-type: none;
                         margin-right: 10px;
                         font-size: 0.75rem;
 
@@ -108,7 +106,6 @@
     @include desktop {
         .container {
         @include flex(row, space-around, center);
-
         // about me
             .aboutMe {
                 height: 50%;

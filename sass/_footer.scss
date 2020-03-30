@@ -58,10 +58,11 @@
 }
 
 .itemFooter {
-    position: relative;
+    @include pos(relative,10px,auto,auto,auto);
+    // position: relative;
     display: inline-block;
     margin-right: 30px;
-    top: 10px;
+    // top: 10px;
     opacity: 0;
     transition: opacity 0.5s ease, top 0.5s ease;
     transition-delay: 0;

@@ -49,7 +49,8 @@
         btnMenu.classList.toggle('active');
         });
 
-    // d.querySelectorAll(".galleryItems").addEventListener("mouseover", imgHover);
-
+    // Button checked to switch between work categories
+     d.querySelector("#gameBtn").addEventListener("click", fShowGame);
+     d.querySelector("#mayaBtn").addEventListener("click", fShow3D);
 })();
 
