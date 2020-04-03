@@ -44,7 +44,7 @@ body {
     background-color: $color_black;
     border-left: 5px solid $color_yellow;
     color: $color_white;
-    overflow: scroll;
+    overflow: hiden;
     user-select: none;
 }
 
@@ -81,9 +81,14 @@ header {
         }
     }
     #sectionName {
+        display: none;
         @include font("Elianto", 1.5rem, auto);
         cursor: context-menu;  
         opacity: 0.3;
+
+        @include desktop {
+            display: block;
+        }
     }
 
     hr {

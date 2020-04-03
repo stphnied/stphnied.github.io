@@ -4,9 +4,12 @@
 //     transform-origin: center ;
 // }
 
-.container {
-    @include flex(column, center, center);
-    height: 100%;
+#sectionWork {
+    display: none;
+    .container {
+        @include flex(column, center, center);
+        height: 100%;
+    }
 }
 
 .galleryWrapper {

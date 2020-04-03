@@ -524,7 +524,7 @@ body {
   background-color: #161515;
   border-left: 5px solid #f4ae34;
   color: #f1f1f1;
-  overflow: scroll;
+  overflow: hiden;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -591,11 +591,18 @@ header svg:active {
 }
 
 header #sectionName {
+  display: none;
   font-family: "Elianto";
   font-size: 1.5rem;
   font-weight: auto;
   cursor: context-menu;
   opacity: 0.3;
+}
+
+@media (min-width: 992px) {
+  header #sectionName {
+    display: block;
+  }
 }
 
 header hr {
@@ -895,6 +902,7 @@ header hr {
 }
 
 #sectionBtnDown p {
+  font-size: 0.85rem;
   -webkit-writing-mode: vertical-lr;
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
@@ -909,6 +917,9 @@ header hr {
     right: auto;
     left: auto;
     padding-left: 10rem;
+  }
+  #sectionBtnDown p {
+    font-size: 1rem;
   }
 }
 
@@ -931,12 +942,12 @@ header hr {
 
 #sectionAbout .container .aboutMe {
   height: 45%;
+  padding: 4rem 1rem 0;
   opacity: 0;
 }
 
 #sectionAbout .container .aboutMe p {
-  width: 400px;
-  word-spacing: 0.3rem;
+  word-spacing: 0.1rem;
   letter-spacing: 0.01rem;
 }
 
@@ -957,7 +968,7 @@ header hr {
 
 #sectionAbout .container .aboutMe ul li {
   margin-right: 10px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #sectionAbout .container .aboutMe ul a {
@@ -972,8 +983,8 @@ header hr {
 #sectionAbout .container .aboutMe hr {
   height: 5px;
   width: 60px;
-  margin: 25px 0 25px 0;
-  opacity: 0.2;
+  margin: 10px 0 10px 0;
+  opacity: 0.4;
   background-color: #885907;
   border: 0;
 }
@@ -986,10 +997,31 @@ header hr {
   height: 50%;
   width: 100%;
   opacity: 0;
+  padding-left: 2rem;
+}
+
+#sectionAbout .container .skills h1 {
+  margin: 2rem 0 0 0;
+}
+
+#sectionAbout .container .skills .skillContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#sectionAbout .container .skills #skillDesign {
+  height: 210px;
+  width: 175px;
 }
 
 #sectionAbout .container .skills #skillDesign svg {
   height: 75px;
+  width: 75px;
+  margin: 0 0.5rem 0.5rem 0;
   -webkit-filter: drop-shadow(1px 1px 0px #111) drop-shadow(-1px 1px 0px #111) drop-shadow(1px -1px 0px #111) drop-shadow(-1px 13px 0px #111);
           filter: drop-shadow(1px 1px 0px #111) drop-shadow(-1px 1px 0px #111) drop-shadow(1px -1px 0px #111) drop-shadow(-1px 13px 0px #111);
 }
@@ -999,7 +1031,9 @@ header hr {
   background: linear-gradient(225deg, #141313, #181616);
   -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
           box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
-  margin-top: 5rem;
+  height: 210px;
+  margin-top: 1rem;
+  margin-left: 2rem;
   padding-bottom: 1.2rem;
 }
 
@@ -1007,6 +1041,10 @@ header hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 0;
   padding-left: 10px;
 }
@@ -1027,7 +1065,7 @@ header hr {
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill2,
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill3,
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 {
-  height: 15px;
+  height: 10px;
   width: 100px;
   background-color: #252525;
 }
@@ -1058,17 +1096,76 @@ header hr {
   }
   #sectionAbout .container .aboutMe {
     height: 50%;
+    padding: 0;
+  }
+  #sectionAbout .container .aboutMe p {
+    width: 400px;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.01rem;
+  }
+  #sectionAbout .container .aboutMe ul li {
+    font-size: 1.5rem;
+  }
+  #sectionAbout .container .aboutMe hr {
+    margin: 25px 0 25px 0;
+    opacity: 0.2;
   }
   #sectionAbout .container .skills {
     width: unset;
+    padding-left: 0;
+  }
+  #sectionAbout .container .skills h1 {
+    margin: 0.67em 0;
+  }
+  #sectionAbout .container .skills .skillContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  #sectionAbout .container .skills #skillDesign {
+    height: unset;
+    width: unset;
   }
   #sectionAbout .container .skills #skillDesign svg {
-    height: 90px;
+    height: 100px;
+    width: 100px;
+    padding-right: 2rem;
+    margin: 0;
+  }
+  #sectionAbout .container .skills #skillProg {
+    height: unset;
+    margin-top: 5rem;
+    padding-bottom: 1.2rem;
+    margin-left: 0;
+  }
+  #sectionAbout .container .skills #skillProg .skill-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #sectionAbout .container .skills #skillProg .skill-list .skill1,
+  #sectionAbout .container .skills #skillProg .skill-list .skill2,
+  #sectionAbout .container .skills #skillProg .skill-list .skill3,
+  #sectionAbout .container .skills #skillProg .skill-list .skill4 {
+    height: 15px;
+    width: 100px;
   }
 }
 
 /* ------------ # Work ------------ */
-.container {
+#sectionWork {
+  display: none;
+}
+
+#sectionWork .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1314,9 +1411,7 @@ header hr {
 
 /* ------------ # Contact ------------ */
 #sectionContact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

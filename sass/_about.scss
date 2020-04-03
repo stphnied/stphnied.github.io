@@ -7,11 +7,12 @@
         // Section description
         .aboutMe {
             height: 45%;
+            padding: 4rem 1rem 0;
             opacity: 0;
         
             p {
-                width: 400px;
-                word-spacing: 0.3rem;
+                // width: 400px;
+                word-spacing: 0.1rem;
                 letter-spacing: 0.01rem;
             }
 
@@ -24,7 +25,7 @@
 
                 li {
                     margin-right: 10px;
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                 }
 
                 a {
@@ -36,8 +37,8 @@
 
             hr {
                 @include taille(5px, 60px);
-                margin: 25px 0 25px 0;
-                opacity: 0.2;
+                margin: 10px 0 10px 0;
+                opacity: 0.4;
                 background-color: darken($color_yellow, 30%);
                 border: 0;
             }
@@ -52,24 +53,39 @@
         .skills {
             @include taille(50%,100%);
             opacity: 0;
+            padding-left: 2rem;
 
+            h1 {
+                margin: 2rem 0 0 0;
+            }
+
+            .skillContainer {
+                display: flex;
+                align-items: flex-end;
+            }
             // Design part
             #skillDesign {
+                @include taille(210px, 175px); //mob
                 svg {
-                    height: 75px;
+                    @include taille(75px, 75px);
+                    margin: 0 0.5rem 0.5rem 0;
                     filter: drop-shadow(1px 1px 0px #111) drop-shadow(-1px 1px 0px #111) drop-shadow(1px -1px 0px #111) drop-shadow(-1px 13px 0px #111);
                 }
             }
 
             // Prog part
             #skillProg {
+                // display: none;
                 @include box();
-                margin-top: 5rem;
+                height: 210px; //mob
+                margin-top: 1rem;
+                margin-left: 2rem;
                 padding-bottom: 1.2rem;
 
                 // ul
                 .skill-list {
                     display: flex;
+                    flex-direction: column;
                     margin: 0;
                     padding-left: 10px;
 
@@ -87,7 +103,7 @@
                         .skill2,
                         .skill3,
                         .skill4 {
-                            @include taille(15px, 100px);
+                            @include taille(10px, 100px);
                             background-color: darken($color_white, 80%);
 
                             &>* {
@@ -109,22 +125,68 @@
         // about me
             .aboutMe {
                 height: 50%;
+                padding: 0;
 
-                p {}
+                p {
+                    width: 400px;
+                    word-spacing: 0.3rem;
+                    letter-spacing: 0.01rem;
+                }
 
                 ul {
-                    li {}
+                    li {
+                        font-size: 1.5rem;
+                    }
 
                     a {}
+                }
+
+                hr {
+                    margin: 25px 0 25px 0;
+                    opacity: 0.2;
                 }
             }
 
             // Skills
             .skills {
                 width: unset;
+                padding-left: 0;
+                h1 {
+                    margin: 0.67em 0;
+                }
+                .skillContainer {
+                    flex-direction: column;
+                    align-items: baseline;
+                }
 
                     #skillDesign {
-                        svg {height: 90px;}
+                        @include taille(unset, unset);
+                        svg {
+                            height: 100px;
+                            width: 100px;
+                            padding-right: 2rem;
+                            margin: 0;
+                        }
+                    }
+
+                    #skillProg {
+                        height: unset;
+                        margin-top: 5rem;
+                        padding-bottom: 1.2rem;
+                        margin-left: 0;
+
+                        .skill-list {
+                            display: flex;
+                            flex-direction: row;
+
+                            .skill1,
+                            .skill2,
+                            .skill3,
+                            .skill4 {
+                                @include taille(15px, 100px);
+
+                            }
+                        }
                     }
             }
         }
