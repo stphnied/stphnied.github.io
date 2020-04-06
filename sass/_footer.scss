@@ -1,6 +1,6 @@
 .menuFooter {
     // @include pos(fixed,auto,1rem,auto,1.25rem);
-    display: inline-block;
+    display: none;
     max-width: none;
     padding-top: 50px;
     text-transform: uppercase;
@@ -29,6 +29,7 @@
     // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop  {
         @include pos(fixed, auto, 1rem, auto, 1.25rem);
+        display: inline-block;
     }
 }
 

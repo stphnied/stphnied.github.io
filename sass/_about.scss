@@ -52,8 +52,8 @@
         // Section skills
         .skills {
             @include taille(50%,100%);
-            opacity: 0;
-            padding-left: 2rem;
+                opacity: 0;
+                padding-left: 2rem;
 
             h1 {
                 margin: 2rem 0 0 0;
@@ -65,7 +65,8 @@
             }
             // Design part
             #skillDesign {
-                @include taille(210px, 175px); //mob
+                @include taille(210px, 175px);
+
                 svg {
                     @include taille(75px, 75px);
                     margin: 0 0.5rem 0.5rem 0;
@@ -120,8 +121,10 @@
     }
     // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
+        
         .container {
         @include flex(row, space-around, center);
+
         // about me
             .aboutMe {
                 height: 50%;
@@ -162,8 +165,9 @@
                     #skillDesign {
                         @include taille(unset, unset);
                         svg {
-                            height: 100px;
-                            width: 100px;
+                            @include taille(100px,100px);
+                            // height: 100px;
+                            // width: 100px;
                             padding-right: 2rem;
                             margin: 0;
                         }

@@ -5,7 +5,7 @@
 // }
 
 #sectionWork {
-    display: none;
+    // display: none;
     .container {
         @include flex(column, center, center);
         height: 100%;
@@ -16,6 +16,11 @@
     display: flex;
     flex-wrap: wrap;
     margin: 1rem auto;
+    height: inherit;
+
+    @include desktop {
+        height: auto;
+    }
 }
 
 .galleryGrid {
@@ -28,107 +33,170 @@
     h1 {
         @include font("azonix", 3rem, auto);
         text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        // transform-origin: center;
         margin: auto;
         color: $color_yellow;
+
+        @include desktop {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            transform-origin: center;
+        }
     }
 }
 
 .workGame {
     // animation: popUp 1s ease 1s;
     opacity: 0;
-    padding: 5rem;
+    // padding: 5rem;
     // background-color: darken($color_black, 3%);
     // border: 3px solid $color_cyan;
     display: grid;
-    grid-template-columns: auto 1fr auto 1fr;
-    grid-template-rows: 1fr 1fr ;
-    grid-template-areas: "title . .""title . .";
-        .galleryItems {
-            filter: brightness(0.75);
+    grid-template-columns: 0.5fr [game] ;
+    grid-template-rows: 0.25fr 1fr 0.5fr 0.5fr 1fr 1fr;
+    grid-template-areas: "Title Title""game1 game1""gameHalf1 gameHalf2""game2 game2""game3 game3""game4 game4";
+
+    @include desktop {
+        grid-template-columns: auto 1fr auto 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "title . .""title . .";
+    }
+    .galleryItems {
+        filter: brightness(0.75);
+        height: 150px;
+        padding: 0.2rem;
+
+        @include desktop {
             height: 250px;
-            padding: 0.2rem;
+        }
 
-            // border: 1px solid #555;
-            &:hover {
-                transition: .4s all;
-                transform: scale(1.05);
-                z-index: 99;
-                filter: brightness(1);
-                border-bottom: 2px solid $color_cyan;
+        // border: 1px solid #555;
+        &:hover {
+            transition: .4s all;
+            transform: scale(1.05);
+            z-index: 99;
+            filter: brightness(1);
+            border-bottom: 2px solid $color_cyan;
 
-                // On hover, play gif
-                &:nth-of-type(1) {
-                    opacity: 0.5;
-                    background-image: url("../media/airGif.gif"), url("../media/sd-airBallon.png");
-                    background-size: contain;
-                    background-blend-mode: color-dodge;
-                }
-
-                &:nth-of-type(2) {}
-
-                &:nth-of-type(3) {}
-
-                &:nth-of-type(4) {
-                    background-image: url("../media/sd-quercus.png"), url("../media/quercusGif.gif");
-                    background-size: contain;
-                    background-blend-mode: color-dodge;
-                }
-
-                &:nth-of-type(5) {
-                    background-image: url("../media/sd-blok.png"), url("../media/blokGif.gif");
-                    background-size: cover;
-                    background-blend-mode: multiply;
-                }
-
-                &:nth-of-type(6) {
-                    background-image: url("../media/sd-astre.png"), url("../media/astreGif.gif");
-                    background-size: contain;
-                    background-blend-mode: color-dodge;
-                }
-            }
-            // Setting img for each area
-            &:nth-child(n) {
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-
-            // Setting img
+            // On hover, play gif
             &:nth-of-type(1) {
-                @include taille(250px, 450px);
-                background-image: url("../media/sd-airBallon.png");
+                opacity: 0.5;
+                background-image: url("../media/airGif.gif"), url("../media/sd-airBallon.png");
+                background-size: contain;
+                background-blend-mode: color-dodge;
             }
 
-            &:nth-of-type(2) {
-                // background-image: url("../media/sd-tokki.png");
-            }
+            &:nth-of-type(2) {}
 
-            &:nth-of-type(3) {
-                @include taille(250px, 450px);
-                background-image: url("../media/sd-tokki.png");
-            }
+            &:nth-of-type(3) {}
 
             &:nth-of-type(4) {
-                @include taille(250px, 450px);
-                background-image: url("../media/sd-quercus.png");
+                background-image: url("../media/sd-quercus.png"), url("../media/quercusGif.gif");
+                background-size: contain;
+                background-blend-mode: color-dodge;
             }
 
             &:nth-of-type(5) {
-                width: inherit;
-                background-image: url("../media/sd-blok.png");
+                background-image: url("../media/sd-blok.png"), url("../media/blokGif.gif");
+                background-size: cover;
+                background-blend-mode: multiply;
             }
 
             &:nth-of-type(6) {
-                @include taille(250px, 450px);
-                background-image: url("../media/sd-astre.png");
+                background-image: url("../media/sd-astre.png"), url("../media/astreGif.gif");
+                background-size: contain;
+                background-blend-mode: color-dodge;
             }
         }
+        // Setting img for each area
+        &:nth-child(n) {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .title {
+            @include box();
+            grid-area: Title;
+            padding: 1rem;
+            margin: 0 1rem 0 1rem;
+
+            @include desktop {
+                grid-area : title;
+            }
+        }
+
+        // Setting img
+        &:nth-of-type(1) {
+            @include taille(150px, 350px);
+            grid-area: game1;
+            background-image: url("../media/sd-airBallon.png");
+
+            @include desktop {
+                @include taille(250px, 450px);
+                grid-area: unset;
+            }
+        }
+
+        &:nth-of-type(2) {
+            height: 170px;
+            grid-area: gameHalf1;
+            // background-image: url("../media/sd-tokki.png");
+            @include desktop {
+                height: 250px;
+                grid-area: unset;
+                background-image: inherit;
+            }
+        }
+
+        &:nth-of-type(3) {
+            grid-area: gameHalf2;
+            // width: inherit;
+            height: 170px;
+            width: 150px;
+            background-image: url("../media/sd-blok.png");
+            @include desktop {
+                background-image: url("../media/sd-tokki.png");
+                @include taille(250px, 450px);
+                grid-area: unset;
+            }
+            
+        }
+
+        &:nth-of-type(4) {
+            grid-area: game2;
+            @include taille(150px, 350px);
+            background-image: url("../media/sd-quercus.png");
+            @include desktop {
+                @include taille(250px, 450px);
+                grid-area: unset;
+            }
+        }
+
+        &:nth-of-type(5) {
+            grid-area: game3;
+            @include taille(150px, 350px);
+            background-image: url("../media/sd-tokki.png");
+            @include desktop {
+                height: 250px;
+                width: inherit;
+                background-image: url("../media/sd-blok.png");
+                grid-area: unset;
+            }
+        }
+
+        &:nth-of-type(6) {
+            grid-area: game4;
+            @include taille(150px, 350px);
+            background-image: url("../media/sd-astre.png");
+            @include desktop {
+                @include taille(250px, 450px);
+                grid-area: unset;
+            }
+        }
+    }
 }
 
 .workMaya {
-    padding: 5rem;
+    // padding: 5rem;
     // background-color: darken($color_black, 3%);
     // border: 3px solid $color_cyan;
     display: none;
@@ -144,10 +212,13 @@
 }
 
 .title {
-    @include box();
-    grid-area: title;
-    padding: 1rem;
-    margin: 0 1rem 0 1rem;
+    @include desktop {
+        @include box();
+        grid-area: title;
+        padding: 1rem;
+        margin: 0 1rem 0 1rem;
+        }
+
 }
 
 // Radio button
@@ -183,25 +254,15 @@
     }
 }
 
-.left-fade {
-    @include taille(30rem,25%);
-    @include pos(fixed,300px,auto,auto,300px);
-    background: linear-gradient(100deg,$color_black 0%, rgba(0, 0, 0, 0) 80%);
-    pointer-events: none;
-    z-index: -1;
-}
-
-.right-fade {
-    @include taille(30rem, 25%);
-    @include pos(fixed, 300px, auto, 0, auto);
-    background: linear-gradient(-100deg, $color_black 0%, rgba(0, 0, 0, 0) 80%);
-    pointer-events: none;
-    z-index: -1;
-}
-
 // 
 .active {
     transform: scale(2);
     position: absolute;
 }
 
+
+// DESKTOP
+ 
+@media screen and (min-width : 992px ) { 
+ 
+}
