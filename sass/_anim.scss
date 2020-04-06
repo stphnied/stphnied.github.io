@@ -133,30 +133,3 @@
         border-color: $color_white;
     }
 }
-
-/* Animation de la flèche de défilement */
-// @keyframes animScrollDown {
-//     from {
-//         filter: drop-shadow(20px 15px rgba(yellow, 0.5));
-
-//     }
-
-//     50% {
-//         // transform: translateY(10px);
-//         filter: drop-shadow(-20px -15px rgba(cyan, 0.5));
-
-//     }
-
-//     to {
-//         filter: drop-shadow(20px 15px rgba(yellow, 0.5));
-
-//     }
-// }
-
-
-// .active {
-//     height : 500px;
-//     width: 500px
-//     // @include taille(500px, 500px);
-//     // transform: scale(3);
-// }

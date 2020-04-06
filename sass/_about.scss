@@ -16,6 +16,7 @@
                 letter-spacing: 0.01rem;
             }
 
+            // Liens sociaux medias
             ul {
                 @include box();
                 display: flex;
@@ -34,7 +35,7 @@
                     &:hover {opacity: 1;}
                 }
             }
-
+            
             hr {
                 @include taille(5px, 60px);
                 margin: 10px 0 10px 0;
@@ -60,8 +61,7 @@
             }
 
             .skillContainer {
-                display: flex;
-                align-items: flex-end;
+                @include flex(auto,auto,flex-end);
             }
             // Design part
             #skillDesign {
@@ -79,8 +79,7 @@
                 // display: none;
                 @include box();
                 height: 210px; //mob
-                margin-top: 1rem;
-                margin-left: 2rem;
+                margin: 1rem auto auto 2rem;
                 padding-bottom: 1.2rem;
 
                 // ul
@@ -121,10 +120,8 @@
     }
     // Desktop version -----------------------------------------------------------DESKTOP
     @include desktop {
-        
         .container {
         @include flex(row, space-around, center);
-
         // about me
             .aboutMe {
                 height: 50%;
@@ -135,15 +132,11 @@
                     word-spacing: 0.3rem;
                     letter-spacing: 0.01rem;
                 }
-
                 ul {
                     li {
                         font-size: 1.5rem;
                     }
-
-                    a {}
                 }
-
                 hr {
                     margin: 25px 0 25px 0;
                     opacity: 0.2;
@@ -158,16 +151,13 @@
                     margin: 0.67em 0;
                 }
                 .skillContainer {
-                    flex-direction: column;
-                    align-items: baseline;
+                    @include flex(column,auto,baseline);
                 }
 
                     #skillDesign {
                         @include taille(unset, unset);
                         svg {
                             @include taille(100px,100px);
-                            // height: 100px;
-                            // width: 100px;
                             padding-right: 2rem;
                             margin: 0;
                         }
@@ -175,13 +165,11 @@
 
                     #skillProg {
                         height: unset;
-                        margin-top: 5rem;
+                        margin: 5rem auto auto 0;
                         padding-bottom: 1.2rem;
-                        margin-left: 0;
 
                         .skill-list {
-                            display: flex;
-                            flex-direction: row;
+                            @include flex(row,auto,auto);
 
                             .skill1,
                             .skill2,

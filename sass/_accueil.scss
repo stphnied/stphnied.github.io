@@ -11,13 +11,14 @@
         padding-bottom: 2rem;
         margin-left: 2rem;
 
+        // Titre
         h1 {
             @include font("Elianto", 2.1rem, auto);
             text-shadow: -5px 4px 2px rgba(0, 0, 0, 0.5);
             transform: translate3d(0, 0, 0);
             animation: leftSlideIn 1s forwards;
         }
-
+        // Texte
         p {
             font-size: 0.75rem;
             letter-spacing: 1px;
@@ -50,7 +51,6 @@
             @include taille(auto, 100%);
             overflow: hidden;
             margin: 0;
-            // perspective: 100vw;
 
             >div {
                 @include flex(auto, auto, center);
@@ -65,7 +65,6 @@
             .right {
                 @include taille(5rem, auto);
                 margin: 0;
-                // text-align: left;
                 #textDesigner {
                     display: flex;
                 }
@@ -75,8 +74,6 @@
                     content: '\003C \0020 \002F \0020 \003E';
                     color: $color_white;
                     font-weight: bold;
-                    // color: $color_cyan;
-                    // transform:translate3d(-100px,0,0);
                     animation: txtSlideDown 2.3s forwards ease-out;
                 }
             }
@@ -160,25 +157,3 @@
         }
     }
 }
-
-// #sectionBtnDown {
-//     // animation: animScrollDown 4.5s infinite ease-out;
-//     position: absolute;
-//     height: 10rem;
-//     left: 0;
-//     right: 0;
-//     margin-left: auto;
-//     margin-right: auto;
-
-//     svg {
-//         transform: scale(0.15);
-//         filter: drop-shadow(-20px -15px  rgba(cyan, 0.5) );
-//         animation: animScrollDown 3.5s both infinite;
-
-//         .st2{
-//             transform-origin: top;
-//             transform: scale(0.95);
-//             // animation: animScrollDown 4s infinite ;
-//         }
-//     }
-// }

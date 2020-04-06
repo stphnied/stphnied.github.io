@@ -6,23 +6,14 @@
     .container {
         padding-left: 6rem;
     }
-    // .verticalLine2 {
-    //     opacity: 0;
-    //     @include taille(200px, 2px);
-    //     // animation: txtSlideDown 1s forwards;
-    //     background: $color_white;
-    // }
 
     .contactTitre {
-        // animation: txtSlideDown 1s forwards;
         opacity: 0;
-        // animation-delay: .5s;
         font-family: Elianto;
     }
 
     .lienContact {
-        display: flex;
-        align-self: start;
+        @include flex(auto,auto,start);
         @include box();
         padding: 1rem;
 

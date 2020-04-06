@@ -42,13 +42,6 @@ box-shadow: 3px -3px 0px #131212,
     font-weight: $fWeight;
 }
 
-// Responsive tablette
-@mixin tablette() {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
-
 // Responsive desktop
 @mixin desktop() {
     @media (min-width: 992px) {

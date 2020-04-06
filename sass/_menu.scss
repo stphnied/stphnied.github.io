@@ -11,14 +11,11 @@
 }
 
 .btnMenu {
-    position: fixed;
-    bottom: 1em;
-    right: 1em;
-
+    @include pos(fixed,auto,1em,1em,auto);
+    
     .floating-btn {
+        @include taille(3.5em,3.5em);
         display: block;
-        width: 3.5em;
-        height: 3.5em;
         /*   border-radius: 50%; */
         background-color: darken($color_yellow, 25%);
         // opacity: 0.5;
@@ -121,7 +118,6 @@
 
     .nav-wrap {
         width: 200px;
-        // height: 200px;
         float: right;
         position: relative;
     }
