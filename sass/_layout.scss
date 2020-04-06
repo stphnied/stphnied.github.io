@@ -67,6 +67,8 @@ header {
     @include taille(auto,100%);
     @include flex(row-reverse,auto,auto);
     @include pos(fixed,2rem,auto,0,auto);
+    z-index: 99999;
+    transition: all 0.3s;
     svg {      
         height: 3rem;
         margin-right: 2rem;

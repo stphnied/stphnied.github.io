@@ -52,5 +52,20 @@
     // Button checked to switch between work categories
      d.querySelector("#gameBtn").addEventListener("click", fShowGame);
      d.querySelector("#mayaBtn").addEventListener("click", fShow3D);
+
+     
+    // MOBILE : au scroll DOWN, réduit opacité du logo 
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            d.querySelector('header').style.opacity = 1;
+
+
+        } else {
+            d.querySelector("header").style.opacity = 0.3;
+        }
+        prevScrollpos = currentScrollPos;
+    }
 })();
 
