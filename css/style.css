@@ -538,6 +538,9 @@ body {
 section {
   height: 100vh;
   width: 100vw;
+  border-radius: 1px;
+  -webkit-box-shadow: 3px 0 0 #131212;
+          box-shadow: 3px 0 0 #131212;
   margin: 0 auto;
   scroll-snap-align: start;
 }
@@ -576,7 +579,7 @@ header {
 
 header svg {
   height: 3rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 
@@ -640,7 +643,7 @@ header hr {
   bottom: auto;
   right: 0;
   left: 725px;
-  opacity: 0.15;
+  opacity: 0.25;
   background-color: transparent;
   border: 4px solid rgba(0, 255, 255, 0.5);
 }
@@ -679,7 +682,7 @@ header hr {
   bottom: auto;
   right: auto;
   left: 700px;
-  opacity: 0.15;
+  opacity: 0.2;
   border-radius: 50%;
   background-color: transparent;
   border: 4px solid #f4ae34;
@@ -693,7 +696,7 @@ header hr {
   bottom: auto;
   right: auto;
   left: 1050px;
-  opacity: 0.15;
+  opacity: 0.2;
   border-radius: 50%;
   background-color: transparent;
   border: 3px solid #f4ae34;
@@ -927,6 +930,16 @@ header hr {
 }
 
 /* ------------ # About ------------ */
+#sectionAbout {
+  height: 110vh;
+}
+
+@media (min-width: 992px) {
+  #sectionAbout {
+    height: 100vh;
+  }
+}
+
 #sectionAbout .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1083,9 +1096,27 @@ header hr {
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill2 > *,
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill3 > *,
 #sectionAbout .container .skills #skillProg .skill-list .skill .skill4 > * {
+  background: rgba(0, 255, 255, 0.5);
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill1 div {
+  height: inherit;
+  width: 80px;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill2 div {
+  height: inherit;
+  width: 80px;
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill3 div {
   height: inherit;
   width: 50px;
-  background: rgba(0, 255, 255, 0.5);
+}
+
+#sectionAbout .container .skills #skillProg .skill-list .skill .skill4 div {
+  height: inherit;
+  width: 30px;
 }
 
 @media (min-width: 992px) {
@@ -1102,6 +1133,9 @@ header hr {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  #sectionAbout .container h1 {
+    font-weight: 600;
   }
   #sectionAbout .container .aboutMe {
     height: 50%;
@@ -1178,17 +1212,17 @@ header hr {
     height: 15px;
     width: 100px;
   }
+  #sectionAbout .container .skills #skillProg .skill-list .skill1 {
+    width: 80px;
+  }
+  #sectionAbout .container .skills #skillProg .skill-list .skill1 div {
+    width: 80px;
+  }
 }
 
 /* ------------ # Work ------------ */
 #sectionWork {
-  height: 150vh;
-}
-
-@media (min-width: 992px) {
-  #sectionWork {
-    height: 100vh;
-  }
+  height: 160vh;
 }
 
 #sectionWork .container {
@@ -1205,7 +1239,13 @@ header hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  height: 160vh;
+}
+
+@media (min-width: 992px) {
+  #sectionWork .container {
+    height: 100vh;
+  }
 }
 
 .galleryWrapper {
@@ -1276,7 +1316,6 @@ header hr {
 .workGame,
 .workMaya {
   opacity: 0;
-  padding-top: 3rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 0.5fr [game];
@@ -1331,16 +1370,16 @@ header hr {
   background-blend-mode: color-dodge;
 }
 
+.workGame .galleryItems:hover:nth-of-type(3) {
+  background-image: url("../media/sd-blok.png"), url("../media/blokGif.gif");
+  background-size: contain;
+  background-blend-mode: multiply;
+}
+
 .workGame .galleryItems:hover:nth-of-type(4) {
   background-image: url("../media/sd-quercus.png"), url("../media/quercusGif.gif");
   background-size: contain;
   background-blend-mode: color-dodge;
-}
-
-.workGame .galleryItems:hover:nth-of-type(5) {
-  background-image: url("../media/sd-blok.png"), url("../media/blokGif.gif");
-  background-size: cover;
-  background-blend-mode: multiply;
 }
 
 .workGame .galleryItems:hover:nth-of-type(6) {
@@ -1664,47 +1703,100 @@ header hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: auto;
+      -ms-flex-align: auto;
+          align-items: auto;
+  height: 80vh;
+}
+
+@media (min-width: 992px) {
+  #sectionContact {
+    height: 100vh;
+  }
 }
 
 #sectionContact .container {
-  padding-left: 6rem;
+  padding: 0 0 0 1rem;
+  width: 100vw;
 }
 
-#sectionContact .contactTitre {
+@media (min-width: 992px) {
+  #sectionContact .container {
+    border-radius: 1px;
+    background: linear-gradient(225deg, #141313, #181616);
+    -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+            box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
+    padding: 6rem;
+    width: 50vw;
+    margin: 0 auto;
+  }
+}
+
+#sectionContact .contactTitre, #sectionContact .contactSoustitre {
   opacity: 0;
   font-family: Elianto;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  #sectionContact .contactTitre, #sectionContact .contactSoustitre {
+    font-size: 2.5rem;
+  }
+}
+
+#sectionContact .contactSoustitre {
+  font-size: 1.1rem;
+  color: #d8d8d8;
+  opacity: 0.2;
+}
+
+@media (min-width: 992px) {
+  #sectionContact .contactSoustitre {
+    font-size: 1.5rem;
+  }
 }
 
 #sectionContact .lienContact {
+  height: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: auto;
-          flex-direction: auto;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: auto;
       -ms-flex-pack: auto;
           justify-content: auto;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  border-radius: 1px;
-  background: linear-gradient(225deg, #141313, #181616);
-  -webkit-box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
-          box-shadow: -3px 3px 0px #131212,3px -3px 0px #191818;
   padding: 1rem;
 }
 
 #sectionContact .lienContact li {
   margin-right: 2rem;
+  padding-top: 1rem;
 }
 
 #sectionContact .lienContact li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
   text-decoration: none;
   color: #f1f1f1;
   opacity: 0.8;
@@ -1713,12 +1805,45 @@ header hr {
 #sectionContact .lienContact li a:hover {
   -webkit-transition: 0.2 all;
   transition: 0.2 all;
+  color: rgba(0, 255, 255, 0.5);
+}
+
+#sectionContact .lienContact li a i {
+  font-size: 3rem;
   color: #f4ae34;
+  padding-right: 1rem;
+}
+
+#sectionContact .lienContact li a p {
+  font-size: 1rem;
 }
 
 @media (min-width: 992px) {
-  #sectionContact {
-    margin: 0 10.5rem;
+  #sectionContact .lienContact li a {
+    font-size: 1.25rem;
+    color: #f1f1f1;
+  }
+}
+
+@media (min-width: 992px) {
+  #sectionContact .lienContact {
+    height: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: auto;
+        -ms-flex-pack: auto;
+            justify-content: auto;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 }
 

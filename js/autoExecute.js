@@ -60,12 +60,12 @@
     window.onscroll = function () {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-            d.querySelector('header').style.opacity = 1;
+            d.querySelector('header').style.opacity = 0.7;
             d.querySelector('#mobileMenu').style.opacity = 0.7;
 
 
         } else {
-            d.querySelector("header").style.opacity = 0.3;
+            d.querySelector("header").style.opacity = 1;
             d.querySelector('#mobileMenu').style.opacity = 0.3;
 
         }

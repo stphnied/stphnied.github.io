@@ -84,6 +84,7 @@ function appearScrollAnim() {
         sectMaya = d.querySelector(".workMaya").style,
         btnWork = d.querySelector(".radioContainer").style,
         sectContactTitle = d.querySelector(".contactTitre").style,
+        sectContactSubTitle = d.querySelector(".contactSoustitre").style,
         sectMenu = d.querySelector("#f-menu").style,
         sectLiens = d.querySelector(".titleFooter").style;
 
@@ -123,6 +124,7 @@ function appearScrollAnim() {
     // Page contact
     if (fDefileDocElm >= fHauteurSection * 3) {
         sectContactTitle.animation = "txtSlideDown 1s forwards";
+        sectContactSubTitle.animation = "txtSlideDown 1.5s forwards"
     }
 
 }
