@@ -16,9 +16,7 @@
     .floating-btn {
         @include taille(3.5em,3.5em);
         display: block;
-        /*   border-radius: 50%; */
         background-color: darken($color_yellow, 25%);
-        // opacity: 0.5;
         box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, .26);
         color: hsl(0, 0%, 100%);
         text-align: center;

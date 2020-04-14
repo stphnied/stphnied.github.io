@@ -123,7 +123,6 @@ function appearScrollAnim() {
             lienContact.animation = "leftSlideIn 1.5s 1s forwards";
         }
     }
-
 }
 
 // Fonction permettant d'afficher la galerie d'image correspondante a sa categorie

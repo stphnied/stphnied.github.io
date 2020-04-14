@@ -26,8 +26,9 @@ body {
     background-color: $color_black;
     border-left: 5px solid $color_yellow;
     color: $color_white;
-    // overflow: hiden;
-    user-select: none;
+    @include desktop {
+        user-select: none;
+    }
 }
 
 // Hide scrollbar 

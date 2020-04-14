@@ -20,9 +20,10 @@
 
     .contactTitre, .contactSoustitre {
         @include font(Elianto,1.25rem,auto);
-        opacity: 0;
+        opacity: 0.5;
 
         @include desktop {
+            opacity: 0;
             font-size: 2.5rem;
         }
     }
@@ -33,6 +34,7 @@
         opacity: 0.2;
 
         @include desktop {
+            opacity: 0;
             font-size : 1.5rem
         }
     }
