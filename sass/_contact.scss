@@ -2,12 +2,14 @@
 #sectionContact {
     @include flex(column, center, auto);
     height: 80vh;
+    
     @include desktop {
         height: 100vh;
     }
     .container {
         padding: 0 0 0 1rem;
         width: 100vw;
+
         @include desktop {
             @include box();
             padding : 6rem;
@@ -17,12 +19,11 @@
     }
 
     .contactTitre, .contactSoustitre {
+        @include font(Elianto,1.25rem,auto);
         opacity: 0;
-        font-family: Elianto;
-        font-size: 1.25rem;
 
         @include desktop {
-        font-size: 2.5rem;
+            font-size: 2.5rem;
         }
     }
 
@@ -39,7 +40,6 @@
     .lienContact {
         @include taille(auto,fit-content);
         @include flex(column,auto,start);
-        // @include box();
         padding: 1rem;
 
         li {
@@ -47,8 +47,7 @@
             padding-top: 1rem;
 
             a{
-                display: flex;
-                align-items: center;
+                @include flex(auto,auto,center);
                 font-size: 1.25rem;
                 text-decoration: none;
                 color: $color_white;
@@ -77,12 +76,7 @@
         @include desktop {
             @include taille(auto, fit-content);
             @include flex(row, auto, start);
+            opacity: 0;
         }
     }
-
-    // Desktop version -----------------------------------------------------------DESKTOP
-    @include desktop {
-    // margin: 0 10.5rem;
-    }
 }
-

@@ -10,10 +10,8 @@
         .aboutMe {
             height: 45%;
             padding: 4rem 1rem 0;
-            opacity: 0;
         
             p {
-                // width: 400px;
                 word-spacing: 0.1rem;
                 letter-spacing: 0.01rem;
             }
@@ -55,7 +53,7 @@
         // Section skills
         .skills {
             @include taille(50%,100%);
-                opacity: 0;
+                // opacity: 0;
                 padding-left: 2rem;
 
             h1 {
@@ -147,6 +145,7 @@
             .aboutMe {
                 height: 50%;
                 padding: 0;
+                opacity: 0;
 
                 p {
                     width: 400px;
@@ -166,6 +165,7 @@
 
             // Skills
             .skills {
+                opacity: 0;
                 width: unset;
                 padding-left: 0;
                 h1 {
@@ -198,11 +198,6 @@
                             .skill4 {
                                 @include taille(15px, 100px);
 
-                            }
-
-                            .skill1 {
-                                div {width: 80px;}
-                                width: 80px;
                             }
                         }
                     }

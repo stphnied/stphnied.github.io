@@ -85,46 +85,43 @@ function appearScrollAnim() {
         btnWork = d.querySelector(".radioContainer").style,
         sectContactTitle = d.querySelector(".contactTitre").style,
         sectContactSubTitle = d.querySelector(".contactSoustitre").style,
-        sectMenu = d.querySelector("#f-menu").style,
-        sectLiens = d.querySelector(".titleFooter").style;
+        lienContact = d.querySelector(".lienContact").style,
+        sectLiens = d.querySelector(".titleFooter").style,
+        bigScreen = window.matchMedia("(min-width: 768px)");
 
     //Page About
-    if (fDefileDocElm <= fHauteurSection) {
-        // Cacher le menu et les liens sociaux au debut
-        // sectMenu.opacity = "0";
-        // sectMenu.removeProperty("animation");
-        sectLiens.opacity = "0";
-        sectLiens.removeProperty("animation");
-    }
+    if (bigScreen.matches ) {
+        if (fDefileDocElm <= fHauteurSection) {
+            // Cacher les liens sociaux au debut
+            sectLiens.opacity = "0";
+            sectLiens.removeProperty("animation");
+        }
 
-    if (fDefileDocElm == fHauteurSection) {
-        // Cotenu a propos
-        sectAboutMe.animation = "leftSlideIn 1s forwards";
-        sectSkills.animation = "rightSlideIn 1s forwards 0.5s";
+        if (fDefileDocElm == fHauteurSection) {
+            // Cotenu a propos
+            sectAboutMe.animation = "leftSlideIn 1s forwards";
+            sectSkills.animation = "rightSlideIn 1s forwards 0.5s";
 
-        // Menu et liens sociaux
-        // sectMenu.animation = "rightSlideIn 0.5s forwards";
-        sectLiens.animation = "leftSlideIn 1s forwards";
-    }
+            //liens sociaux
+            sectLiens.animation = "leftSlideIn 1s forwards";
+        }
 
-    if (fDefileDocElm >= fHauteurSection * 2) {
-        // anim work
-        sectGame.animation = "popUp 1s forwards";
-        sectMaya.animation = "popUp 1s forwards";
-        btnWork.animation = "txtSlideDown 1s forwards 0.5s"
-        
-        // Remove anim about
-        // sectAboutMe.removeProperty("animation");
-        // sectSkills.removeProperty("animation");
-    }
+        if (fDefileDocElm >= fHauteurSection * 2) {
+            // anim work
+            sectGame.animation = "popUp 1s forwards";
+            sectMaya.animation = "popUp 1s forwards";
+            btnWork.animation = "txtSlideDown 1s forwards 0.5s"
+        }
 
-    if (fDefileDocElm == fHauteurSection * 2) {
-    }
+        if (fDefileDocElm == fHauteurSection * 2) {
+        }
 
-    // Page contact
-    if (fDefileDocElm >= fHauteurSection * 3) {
-        sectContactTitle.animation = "txtSlideDown 1s forwards";
-        sectContactSubTitle.animation = "txtSlideDown 1.5s forwards"
+        // Page contact
+        if (fDefileDocElm >= fHauteurSection * 3) {
+            sectContactTitle.animation = "txtSlideDown 1s forwards";
+            sectContactSubTitle.animation = "txtSlideDown 1.5s forwards";
+            lienContact.animation = "leftSlideIn 1.5s 1s forwards";
+        }
     }
 
 }
