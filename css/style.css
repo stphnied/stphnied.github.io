@@ -1668,7 +1668,6 @@ header hr {
 }
 
 .radioContainer {
-  opacity: 0;
   width: 100%;
   margin: 0 auto;
 }
@@ -1714,6 +1713,12 @@ header hr {
   background: #161515;
   -webkit-box-shadow: 3px -3px 0px #131212, -3px 3px 0px #191818;
           box-shadow: 3px -3px 0px #131212, -3px 3px 0px #191818;
+}
+
+@media (min-width: 992px) {
+  .radioContainer {
+    opacity: 0;
+  }
 }
 
 .active {
